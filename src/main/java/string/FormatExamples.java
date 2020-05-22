@@ -17,7 +17,7 @@ import java.util.Locale;
  *
  * @see https://hyperskill.org/learn/step/7046
  */
-public class Formatowanie {
+public class FormatExamples {
 
     /**
      * Przykład najprostszy dla printf()
