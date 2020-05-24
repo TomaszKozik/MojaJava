@@ -1,7 +1,9 @@
+package kolekcje;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class CollectionClass {
+public class List_WyswietlenieZawartosci {
 
     public static void main(String[] args) {
 
