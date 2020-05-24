@@ -1,112 +1,169 @@
 package string;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 /**
- * StringBuilder przyśpiesza program, gdy wykonujemy wiele operacji na stringach
+ * Zastosowanie:
+ * 1. Przyśpieszenie działania programu, gdy konieczne jest
+ * wykonywanie wielu operacji na stringach.
+ * 2. Gdy potrzebujemy operować na stringach, jak na tablicy
  *
- * @see https://hyperskill.org/learn/step/3812
+ * Source https://hyperskill.org/learn/step/3812
  */
 public class StringBuilderExample {
 
-    static class Konstuktor {
+    static class OperacjeNaObiektachStringBuilder {
         public static void main(String[] args) {
-            // Poniższa linijka jest równoznaczna z String sb = "Hello"
-            StringBuilder sb = new StringBuilder("Hello!");
-            System.out.println(sb); // "Hello!"
+
+            /*
+              Zbudowanie Stringa w oparciu o StringBuilder
+              Wykorzystujemy do tego konstruktor klasy StringBuilder
+              new StringBuilder(String str)
+             */
+            System.out.println("---- Zbudowanie Stringa w oparciu o StringBuilder ----");
+            StringBuilder sb = new StringBuilder("Syrena 105L");
+            System.out.println("Utworzony string to:");
+            System.out.println(sb); // Syrena 105L
+
+
+            /*
+              Pobranie długości Stringa
+              Ta metoda nie modyfikuje obiektu
+              .length()
+             */
+            System.out.println("---- Pobranie długości stringa ----");
+            System.out.println("Długość stringa 'Syrena 105L' to:");
+            System.out.println(sb.length()); // 16
+
+            /*
+              Zwrócenie znaku zgodnie z indeksem.
+              Indeks liczymy o 0
+              Ta metoda nie modyfikuje obiektu
+              .charAt(int index)
+             */
+            System.out.println("---- Zwrócenie znaku zgodnie z indeksem ----");
+            System.out.println("Indeks 0 dla stringa 'Syrena 105L' to: ");
+            System.out.println(sb.charAt(0)); // 'S'
+            System.out.println("Indeks 7 dla stringa 'Syrena 105L' to:");
+            System.out.println(sb.charAt(7)); // '1'
+
+            /*
+              Zamiana znaku w ciągu względem indeksu
+              .setCharAt(int index, char ch)
+             */
+            System.out.println("---- Zamiana znaku w ciągu względem indeksu ----");
+            sb.setCharAt(6, '-');
+            System.out.println("Zamieniono spację (indeks 6) na myślnik dla stringa 'Syrena 105L' Wynik to:");
+            System.out.println(sb); // 'Syrena-105L
+            sb.setCharAt(6, ' '); // 'Syrena 105 L'
+
+            /*
+              Usunięcie znaku z ciągu zgodnie z indeksem
+              .deleteCharAt(int index)
+             */
+            System.out.println("---- Usunięcie znaku z ciągu zgodnie z indeksem ----");
+            sb.deleteCharAt(10);
+            System.out.println("Usunięto literę 'L' z Stringa 'Syrena 105L'. Wynik to:");
+            System.out.println(sb); // 'Syrena 105'
+
+            /*
+              Dodanie nowego stringa z już istniejącym stringiem
+              .append(String str)
+             */
+            System.out.println("---- Dodanie nowego stringa z już istniejącym stringiem  ----");
+            sb.append("L");
+            System.out.println("Dodano literę 'L' do stringa 'Syrena 105'. Wynik to:");
+            System.out.println(sb); // 'Syrena 105L'
+
+            /*
+              Połączenie nowego stringa z już istniejącym stringiem - rozszerzenie
+              Możliwe jest także wielokrotne wywoływanie tej metody na tym samym obiekcie
+              w tej samej instrukcji, ponieważ ta metoda zwraca ten sam zmodyfikowany obiekt.
+              .append(String str)
+             */
+            System.out.println("---- Połączenie nowego stringa z już istniejącym stringiem - rozszerzenie ----");
+            sb.append("\n")
+                    .append("Wyprodukowany w 1980r. Jego długość to 4,04m.\n")
+                    .append("Włączyłem go dziś o 01:05.");
+            System.out.println("Dodanie wielu stringów do stringa 'Syrena 105L'. Wynik to:");
+            System.out.println(sb);
+            /*
+            Syrena 105L
+            Wyprodukowany w 1980r. Jego długość to 4,04m.
+            Włączyłem go dziś o 01:05.
+             */
+
+            /*
+              Usuwanie znaków z Stringa w zależności od indeksu startowego i końcowego
+              .delete(int start, int end)
+             */
+            System.out.println("---- Usuwanie znaków z Stringa w zależności od indeksu startowego i końcowego ----");
+            sb.delete(11,84);
+            System.out.println("Usunięcie wcześniej dodanych stringów według indeksu od 11 do 84. Wynik to:");
+            System.out.println(sb); // Syrena 105L
+
+            /*
+              Wstawianie stringa np. do środka innego stringa według indeksu
+              .insert(int offset, String str)
+             */
+            System.out.println("---- Wstawianie stringa np. do środka innego stringa według indeksu  ----");
+            sb.insert(7, "najlepsza to model ");
+            System.out.println("Wstawienie stringa 'najlepsza to ' do stringa 'Syrena 105L'. Wynik to:");
+            System.out.println(sb); // 'Syrena najlepsza to model 105L'
+
+            /*
+              Zamiana fragmentu stringa na inny według indeksu początka i końca
+              .replace(int start, int end, String str)
+             */
+            System.out.println("---- Zamiana fragmentu stringa na inny według indeksu początka i końca ----");
+            sb.replace(7,20,"");
+            System.out.println("Zamiana ze stringa 'Syrena najlepsza to model 105L' jego fragmentu 'najlepsza to ' na brak znaku, czyli w zasadzie usuwanie fragmentu");
+            System.out.println(sb); // Syrena model 105L
+
+            /*
+              Odwrócenie stringa
+              .reverse()
+             */
+            System.out.println("---- Odwrócenie stringa ----");
+            sb.reverse();
+            System.out.println("Odwrócenie stringa 'Syrena model 105L' da wynik:");
+            System.out.println(sb); // 'L501 ledom aneryS'
         }
     }
 
     /**
-     * Dłogść to rzeczywista liczba znaków
+     * Długość, a pojemność
+     * Długość to rzeczywista liczba znaków
      * Pojemnosć to ilość pamięci dostępnej dla nowo wstawionych znaków, po przekroczeniu której
      * nastąpi nowy przydział. Pojemność jest częścią wewnętrznej reprezentacji, StringBuildera
-     * jej wartość będzie się dynamicznie zmieniać
+     * jej wartość będzie się dynamicznie zmieniać. StringBuilder widzi każdy string jako tablicę
+     * znaków. Aby poszerzyć string dokłada tak jakby kolejną tablicę do już istniejącej.
+     * Maksimum to 2147483639 znaków.
      */
     static class DlugoscPojemnosc {
         public static void main(String[] args) {
-            StringBuilder sb = new StringBuilder(); // initial capacity is 16
 
-            System.out.println(sb.length());   // 0
+            // Zbudowanie pustego stringa
+            StringBuilder sb = new StringBuilder(); // początkowa pojemność to 16
+
+            System.out.println("Pusty ciąg ma długość:");
+            System.out.println(sb.length()); // 0
+            System.out.println("Pusty ciąg ma pojemność:");
             System.out.println(sb.capacity()); // 16
 
-            sb.append("A very long string");
-
-            System.out.println(sb.length());   // 18
+            sb.append("Syrena 105L w kolorze wiśni");
+            System.out.println("String 'Syrena 105L w kolorze wiśni' ma długość:");
+            System.out.println(sb.length()); // 18
+            System.out.println("String 'Syrena 105L w kolorze wiśni' ma pojemność:");
             System.out.println(sb.capacity()); // 34
         }
     }
 
-    static class WazneMetody {
-        public static void main(String[] args) {
-            System.out.println("---- int length()zwraca długość (liczbę znaków) jak dla zwykłego ciągu. Ta metoda nie modyfikuje obiektu ----");
-            StringBuilder sb = new StringBuilder("I use Java");
-            System.out.println(sb);
-            System.out.println(sb.length()); // 10
-
-            System.out.println("---- char charAt(int index)zwraca znak znajdujący się pod określonym indeksem. Pierwszy znak ma indeks 0. Ta metoda nie modyfikuje obiektu ----");
-            StringBuilder sb2 = new StringBuilder("I use Java");
-            System.out.println(sb2);
-            System.out.println(sb2.charAt(0)); // 'I'
-            System.out.println(sb2.charAt(6)); // 'J'
-
-            System.out.println("---- void setCharAt(int index, char ch)ustawia znak znajdujący się pod określonym indeksem na ch ----");
-            StringBuilder sb3 = new StringBuilder("start");
-            System.out.println(sb3);
-            sb3.setCharAt(1, 'm');
-            System.out.println(sb3); // "smart"
-
-            System.out.println("---- StringBuilder deleteCharAt(int index) usuwa znak z określonej pozycji. ----");
-            StringBuilder sb4 = new StringBuilder("dessert");
-            System.out.println(sb4);
-            sb4.deleteCharAt(2);
-            System.out.println(sb4); // "desert"
-
-            System.out.println("---- StringBuilder append(String str)konkatenuje podany ciąg z końcem wywołującego obiektu StringBuilder. Istnieje również kilka przeciążeń, aby przyjmować prymitywne typy, a nawet tablice znaków. ----");
-            StringBuilder sb5 = new StringBuilder("abc");
-            System.out.println(sb5);
-            sb5.append("123");
-            System.out.println(sb5); // "abc123"
-
-            System.out.println("---- Możliwe jest także wielokrotne wywoływanie tej metody na tym samym obiekcie w tej samej instrukcji, ponieważ ta metoda zwraca ten sam zmodyfikowany obiekt. ----");
-            StringBuilder messageBuilder = new StringBuilder(); // empty
-            messageBuilder
-                    .append("From: Kate@gmail.com\n")
-                    .append("To: Max@gmail.com\n")
-                    .append("Text: I lost my keys. ")
-                    .append("Please, open the door!");
-            System.out.println(messageBuilder);
-
-            System.out.println("---- StringBuilder insert(int offset, String str)wstawia podany ciąg do istniejącego StringBuilderobiektu w danej pozycji. to jest przesunięcie. Metoda ma wiele przeciążeń dla różnych typów. ----");
-            StringBuilder sb6 = new StringBuilder("I'm a programmer.");
-            System.out.println(sb6);
-            sb6.insert(6, "Java ");
-            System.out.println(sb6); // I'm a Java programmer.
-
-            System.out.println("---- StringBuilder replace(int start, int end, String str) zamienia podciąg z określonego indeksu ciągów (włącznie) na indeks końcowy (wyłączny) na dany ciąg.\n ----");
-            StringBuilder sb7 = new StringBuilder("Let's use C#");
-            System.out.println(sb7);
-            sb7.replace(10,12,"Java");
-            System.out.println(sb7); // Let's use Java
-
-            System.out.println("---- StringBuilder delete(int start, int end) usuwa podciąg z indeksu początkowego (włącznie) do indeksu końcowego (wyłączny).\n ----");
-            StringBuilder sb8 = new StringBuilder("Welcome");
-            System.out.println(sb8);
-            sb8.delete(0,3);
-            System.out.println(sb8); // "come"
-
-            System.out.println("---- StringBuilder reverse() powoduje zastąpienie tej sekwencji znaków odwrotnością sekwencji.\n ----");
-            StringBuilder sb9 = new StringBuilder("2 * 3 + 8 * 4");
-            System.out.println(sb9);
-            sb9.reverse();
-            System.out.println(sb9); // "4 * 8 + 3 * 2"
-        }
-    }
-
-    // https://hyperskill.org/learn/step/3813
-    static class Zadanie1 {
+    /**
+     * Zadanie https://hyperskill.org/learn/step/3813
+     * Usuń wszystkie cyfry i połącz otrzymane stringi bez spacji
+     */
+    static class ConcatenateStringsProblem {
         public static String concatenateStringsWithoutDigits(String[] strings) {
             StringBuilder messageBuilder = new StringBuilder();
             for (String string : strings) {

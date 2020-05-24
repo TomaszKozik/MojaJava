@@ -7,6 +7,8 @@ import java.util.Scanner;
  * Zastosowanie: Pobranie od użytkownika danych wprowadzanych z klawiatury
  *
  * Wymagana biblioteka: java.util.Scanner
+ *
+ * Source: https://hyperskill.org/learn/step/9055
  */
 public class ScannerExample {
 
