@@ -8,7 +8,7 @@ import java.util.Scanner;
  * wykonywanie wielu operacji na stringach.
  * 2. Gdy potrzebujemy operować na stringach, jak na tablicy
  *
- * Source https://hyperskill.org/learn/step/3812
+ * Source: https://hyperskill.org/learn/step/3812
  */
 public class StringBuilderExample {
 
