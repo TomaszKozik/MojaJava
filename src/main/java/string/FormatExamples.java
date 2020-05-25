@@ -10,6 +10,8 @@ import java.util.Locale;
  *
  * %c - char
  * %d - int, short, long, byte
+ *      możliwe jest dodawanie ilości zer przed liczbą
+ *      np. %02d - co da nam liczbę dwucyfrową z jednym zerem z przodu
  * %f - float, double
  *      float i double mają możliwość ograniczenia do ilości cyfr po przecinku np. %.5f
  * %s - stringi
