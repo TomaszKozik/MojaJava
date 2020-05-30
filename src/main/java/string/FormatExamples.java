@@ -5,22 +5,25 @@ import java.util.Locale;
 /**
  * Zastosowanie: Tworzenie stringów sparametryzowanych ze zmiennych
  *
- * system.out.printf() - drukowanie formatowanego stringa
- * String.format() - formwatowanie nowego stringa
+ * system.out.printf() - drukowanie formatowanego String'a
+ * String.format() - formwatowanie nowego String'a
  *
- * %c - char
- * %d - int, short, long, byte
- * %f - float, double
- *      float i double mają możliwość ograniczenia do ilości cyfr po przecinku np. %.5f
- * %s - stringi
- * %n - znak nowej linii
+ * %c - umożliwia podstawienie pojedynczego znaku char
+ * %d - umożliwia podstawienie liczb całkowitych int, short, long, byte.
+ *      Dodatkowo możliwe jest wstawianie zer przed cyframi np. %02d,
+ *      czyli dwie cyfry z jednym zerem z przodu
+ * %f - umożliwia podstawienie liczb dziesiętnych float, double.
+ *      Dodatkowo mają możliwość ograniczenia do ilości cyfr po przecinku
+ *      z zastosowaniem zaokrąglenia w górę np. %.5f , czyli 5 cyfr po przecinku
+ * %s - umożliwia podstawienie innego String’a
+ * %n - umożliwia wstawienie znaku nowej linii
  *
  * Source: 'JetBrains Academy: https://hyperskill.org/learn/step/7046
  */
 public class FormatExamples {
 
     /**
-     * Przykład dla drukowania sformatowanego stringa - printf()
+     * Przykład dla drukowania sformatowanego String'a - printf()
      */
     static class Printf {
         public static void main(String[] args) {
@@ -30,7 +33,7 @@ public class FormatExamples {
     }
 
     /**
-     * Przykład dla sformatowanego nowego stringa - .format()
+     * Przykład dla sformatowanego nowego String'a - .format()
      */
     static class FormatString {
         public static void main(String[] args) {
@@ -41,7 +44,7 @@ public class FormatExamples {
     }
 
     /**
-     * Przykład parametryzowania stringa dla różnych typów zmiennych
+     * Przykład parametryzowania String'a dla różnych typów zmiennych
      */
     static class Zmienne {
         public static void main(String[] args){
@@ -60,7 +63,7 @@ public class FormatExamples {
     }
 
     /**
-     * Formatowanie stringów z ustawieniami regionalnymi
+     * Formatowanie String'ów z ustawieniami regionalnymi
      */
     static class UstawieniaRegionalne {
         public static void main(String[] args) {
