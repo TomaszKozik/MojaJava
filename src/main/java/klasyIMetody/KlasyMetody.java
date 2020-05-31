@@ -1,4 +1,4 @@
-package wprowadzenie;
+package klasyIMetody;
 /**
  * Cześć!
  * Zaczynamy przygodę z Java od komentarza dokumentującego.
