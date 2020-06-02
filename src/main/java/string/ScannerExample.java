@@ -25,10 +25,8 @@ public class ScannerExample {
           Ustawienia regionalne dla wprowadzanego tekstu.
           Stosuje się je np. do definiowana speratara liczb dziesiętnych
          */
-        scan.useLocale(Locale.FRANCE);
-        // wprowadzanie liczb z przecinkiem jako separatorem np. 50,102
-        scan.useLocale(Locale.ENGLISH);
-        // wprowadzanie liczb z kropką jako separatorem np. 50.102
+        scan.useLocale(Locale.FRANCE); // wprowadzanie liczb z przecinkiem jako separatorem np. 50,102
+        scan.useLocale(Locale.ENGLISH); // wprowadzanie liczb z kropką jako separatorem np. 50.102
 
         /*
           Wprowadzanie pojedynczego słowa, liczby jako stringi.
@@ -38,6 +36,7 @@ public class ScannerExample {
           np. wpisanie 'Syrena 105L' wprowadzi do programu tylko 'Syrena'
          */
         System.out.println("---- Wprowadzanie pojedynczego słowa, liczby jako stringi ----");
+        System.out.println("Wprowadź dowolny jednowyrazowy tekst");
         String string1 = scan.next();
         System.out.println(string1);
 
@@ -47,6 +46,7 @@ public class ScannerExample {
           np. wpisanie 'Syrena 105L' wprowadzi do programu 'Syrena 105L'
          */
         System.out.println("---- Wprowadzanie dowolnych słów, liczb jako stringi ----");
+        System.out.println("Wprowadź dowolny tekst");
         String string = scan.nextLine();
         System.out.println(string);
 
@@ -57,6 +57,7 @@ public class ScannerExample {
           np. wpisanie '105' wprowadzi do programu '105'
          */
         System.out.println("---- Wprowadzanie liczb jako liczby całkowite int ----");
+        System.out.println("Wprowadź dowolną liczbe całkowitą");
         Integer integer = scan.nextInt();
         System.out.println(integer);
 
@@ -69,6 +70,7 @@ public class ScannerExample {
           np. wpisanie '105,5' wprowadzi do programu '105.5' dla ustawień regionalnych FRANCE
          */
         System.out.println("---- Wprowadzanie liczb jako liczby dziesięte dobule ----");
+        System.out.println("Wprowadź dowolną liczbe dziesiętną");
         Double aDouble = scan.nextDouble();
         System.out.println(aDouble);
 
@@ -80,6 +82,7 @@ public class ScannerExample {
           np. wpisanie 'false' wprowadzi do programu 'false'
          */
         System.out.println("---- boolean ----");
+        System.out.println("Wprowadź dowolną wartość logiczna 'true' lub 'false'");
         Boolean aBoolean = scan.nextBoolean();
         System.out.println(aBoolean);
     }
