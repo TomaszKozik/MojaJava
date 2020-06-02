@@ -2,53 +2,95 @@ package string;
 
 import java.util.*;
 
+/**
+ * Zastosowanie: Gdy potrzebujemy operować na String'u, jak na tablicy znaków
+ *
+ */
 public class StringToArray {
 
-    /**
-     * Zamiana tablicy znaków na stringi i odwrotnie
-     */
-    static class PrzyklaydNajprostsze {
+    static class Przyklady {
         public static void main(String[] args) {
-            // Tablica znaków na string
-            char[] chars = {'A', 'B', 'C', 'D', 'E', 'F'};
-            String stringFromChars = String.valueOf(chars); // "ABCDEF"
-            System.out.println(stringFromChars);
 
-            // 1. String na tablicę znaków
-            char[] charsFromString = stringFromChars.toCharArray(); // { 'A', 'B', 'C', 'D', 'E', 'F' }
-            String theSameString = new String(charsFromString); // "ABCDEF"
-            System.out.println(theSameString);
+            /*
+              Budowania stringa z tablicy znaków char
+              String.valueOf(char[] char)
+             */
+            System.out.println("---- Budowanie String'a z tablicy znaków char {'S', 'y', 'r', 'e', 'n', 'a'} ----");
+            char[] chars = {'S', 'y', 'r', 'e', 'n', 'a'};
+            String stringFromChars = String.valueOf(chars);
+            System.out.println("Zbudowany string to:");
+            System.out.println(stringFromChars); // 'Syrena'
 
-            // 2. String na tablicę znaków
-            String text = "Hello";
-            String[] parts = text.split(""); // {"H", "e", "l", "l", "o"}
-        }
-    }
+            /*
+              Budowania String'a z tablicy znaków char - drugi sposób, za pomocą konstruktora
+              new String(char[] char)
+             */
+            System.out.println("---- Budowanie stringa z tablicy znaków char {'S', 'y', 'r', 'e', 'n', 'a'} - drugi sposób ----");
+            String theSameString = new String(chars); // "ABCDEF"
+            System.out.println("Zbudowany string to:");
+            System.out.println(theSameString); // 'Syrena'
 
-    static class IterowaniePoStringu {
-        public static void main(String[] args) {
-            String scientistName = "Isaac Newton";
-            for (int i = 0; i < scientistName.length(); i++) {
-                System.out.print(scientistName.charAt(i) + " "); // print the current character
+            /*
+              Rozbicie String'a na tablicę znaków char
+              .toCharArray()
+             */
+            System.out.println("---- Rozbicie String'a 'Syrena' na tablicę znaków char ----");
+            String syrena = "Syrena";
+            char[] charsFromString = syrena.toCharArray(); // { 'A', 'B', 'C', 'D', 'E', 'F' }
+
+            /*
+              Rozbicie String'a na tablicę znaków String'ów
+              .split("")
+             */
+            System.out.println("---- Rozbicie strina 'Syrena' na tablicę znaków char ----");
+            String[] parts = syrena.split(""); // {"S", "y", "r", "e", "n", "a"}
+
+            /*
+              Iterowanie po stringu
+              Za pomocą pętli for oraz .charAt(int i)
+             */
+            System.out.println("---- Iterowanie po stringu ----");
+            System.out.println("Zinterowany string to: ");
+            for (int i = 0; i < syrena.length(); i++) {
+                System.out.print(syrena.charAt(i) + " "); // S y r e n a
             }
+
+            /*
+              Liczenie sumy wartości dziesiętnej znaków ASCII
+             */
+            System.out.println("---- Liczenie sumy wartości dziesiętnej znaków ASCII ----");
+            System.out.println();
+            String syrena2 = "Syrena";
+            System.out.println("'S' ma index 83, 'y' ma index 121, 'r' ma index 114, 'e' ma index 101, 'n' ma index 110, 'a' ma index 97");
+            int suma = syrena2.chars().sum(); //
+            System.out.println(suma); //626
+
         }
     }
 
-    // https://hyperskill.org/learn/step/2282
+
+    /**
+     * Najdłuższe słowo
+     * Wybranie najdłuższego słowa z zdania
+     */
     static class Zadanie1 {
         static class Main {
             public static void main(String[] args) {
-                Scanner scanner = new Scanner(System.in);
-                String longest = Arrays.stream(scanner.nextLine().split(" "))
+                String syrena = "Syrena 105L o kolorze kości słoniowej";
+                String longest = Arrays.stream(syrena.split(" "))
                         .max(Comparator.comparingInt(String::length))
                         .get();
-                System.out.println(longest);
+                System.out.println(longest); // 'słoniowej'
             }
         }
     }
 
-    // https://hyperskill.org/learn/step/2282
-    static class Zadanie3 {
+    /**
+     * Sprawdzamy, czy pierwsza połowa liczby będącej String'iem jest równa drugiej połowie
+     * np. 12344321 - prawda
+     *     125322 - nie prawda
+     */
+    static class Zadanie2 {
         static class Main {
             public static void main(String[] args) {
                 Scanner scanner = new Scanner(System.in);
