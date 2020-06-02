@@ -1,4 +1,4 @@
-package lambdaSuplierConsumerPredicate;
+package doPosprzatania.kolekcje.lambdaSuplierConsumerPredicate;
 
 class Lambda {
 

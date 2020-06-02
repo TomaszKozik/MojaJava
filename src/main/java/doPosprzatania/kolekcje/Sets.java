@@ -1,3 +1,5 @@
+package doPosprzatania.kolekcje;
+
 import java.util.*;
 
 class SetUtils {

@@ -1,3 +1,5 @@
+package doPosprzatania.kolekcje;
+
 public class GenereticClass {
 
     public static void main(String[] args) {

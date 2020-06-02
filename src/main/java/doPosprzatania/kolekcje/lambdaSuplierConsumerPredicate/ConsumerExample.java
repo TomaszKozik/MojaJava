@@ -1,4 +1,4 @@
-package lambdaSuplierConsumerPredicate;
+package doPosprzatania.kolekcje.lambdaSuplierConsumerPredicate;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package kolekcje;
+package doPosprzatania.kolekcje;
 
 import java.util.ArrayList;
 import java.util.List;
