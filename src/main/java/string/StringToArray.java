@@ -12,7 +12,7 @@ public class StringToArray {
         public static void main(String[] args) {
 
             /*
-              Budowania stringa z tablicy znaków char
+              Budowanie String'a z tablicy znaków char
               String.valueOf(char[] char)
              */
             System.out.println("---- Budowanie String'a z tablicy znaków char {'S', 'y', 'r', 'e', 'n', 'a'} ----");
@@ -22,11 +22,11 @@ public class StringToArray {
             System.out.println(stringFromChars); // 'Syrena'
 
             /*
-              Budowania String'a z tablicy znaków char - drugi sposób, za pomocą konstruktora
+              Budowanie String'a z tablicy znaków char - drugi sposób, za pomocą konstruktora
               new String(char[] char)
              */
             System.out.println("---- Budowanie stringa z tablicy znaków char {'S', 'y', 'r', 'e', 'n', 'a'} - drugi sposób ----");
-            String theSameString = new String(chars); // "ABCDEF"
+            String theSameString = new String(chars); // "Syrena"
             System.out.println("Zbudowany string to:");
             System.out.println(theSameString); // 'Syrena'
 
@@ -61,7 +61,7 @@ public class StringToArray {
             System.out.println("---- Liczenie sumy wartości dziesiętnej znaków ASCII ----");
             System.out.println();
             String syrena2 = "Syrena";
-            System.out.println("'S' ma index 83, 'y' ma index 121, 'r' ma index 114, 'e' ma index 101, 'n' ma index 110, 'a' ma index 97");
+            System.out.println("'S' ma wartość 83, 'y' ma wartość 121, 'r' ma wartość 114, 'e' ma wartość 101, 'n' ma wartość 110, 'a' ma wartość 97");
             int suma = syrena2.chars().sum(); //
             System.out.println(suma); //626
 
