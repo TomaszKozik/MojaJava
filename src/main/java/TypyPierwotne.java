@@ -96,8 +96,8 @@ public class TypyPierwotne {
      * byte -> short -> int -> long -> float -> double
      * char -> int
      *
-     * W drugą stronę może zdażyć się przepełnienie, czyli dana liczba
-     * może mieć większą wartość niż typ na króty chcemy ją zmienić.
+     * W drugą stronę może zdarzyć się przepełnienie, czyli dana liczba
+     * może mieć większą wartość niż typ, na który chcemy ją zmienić.
      */
     static class RzutowaniePomiedzyTypami {
         public static void main(String[] args) {
@@ -125,13 +125,13 @@ public class TypyPierwotne {
             double doubleNum = 2.00003;
             long longNum =  (long) doubleNum; // 2
 
-            // Rzutanie long -> int
+            // Rzutowanie long -> int
             int intNum = (int) longNum; // 2
 
             // Rzutowanie long -> int
             int val = (int) (3 + 2L); // 5
 
-            // rzutawanie long -> char
+            // Rzutowanie long -> char
             char cha = (char) 55L; // '7'
 
             // Przepelnienie w rzutowaniu na przykladzie long -> int
@@ -190,7 +190,7 @@ public class TypyPierwotne {
             Long longVal = Long.parseLong("1000");    // 1000 z String'a "1000"
 
             /**
-             * Porównianie danych liczbowych klas opakowujących
+             * Porównanie danych liczbowych klas opakowujących
              * Używamy tutaj metody quals, gdyż klasy opakowujące zwracają referencje
              */
             Integer int1 = 1000;
