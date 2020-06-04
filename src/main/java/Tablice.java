@@ -30,6 +30,15 @@ public class Tablice {
         float[] floatNumbers = new float[]{1.02f, 0.03f, 4f};
 
         /*
+          Tablica wielowymiarowa
+         */
+        int[][] tablicaDwuwymiarowa = {
+                {1, 2, 3, 1}, // tablica 1
+                {3, 4, 1, 2}, // tablica 2
+                {4, 4, 1, 0}  // tablica 3
+        };
+
+        /*
           Pobieranie elementów z tablicy
           Tablica jest indeksowana od wartości 0. Podając w nawiasie kwadratowym
           numer indeksu zwracany jest odpowiedni element
