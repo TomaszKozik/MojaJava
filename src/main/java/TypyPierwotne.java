@@ -81,6 +81,7 @@ public class TypyPierwotne {
             double anotherPosInf = +1 / 0.0;            // Infinity
             // Wartość nieokreślona
             double nan = Double.NaN;                    // NaN
+
             /*
               char
               prezentacja pojedynczego znaku Unicode
