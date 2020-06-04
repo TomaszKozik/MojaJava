@@ -73,7 +73,14 @@ public class TypyPierwotne {
              */
             double doublePrzyklad1 = 1234567890.1234567; // 1.2345678901234567E9
             double doublePrzyklad2 = 1234567890.1d;      // 1.2345678901E9
-
+            double doublePrzyklad3 = 5e-3;               // 5 * 10^(-3) = 0.005
+            double doublePrzyklad4 = 0.01e2;             // 0.01 * 10^2 = 1.0
+            // Liczby nieskończenie długie
+            double posInf = Double.POSITIVE_INFINITY;   // Infinity
+            double negInf = Double.NEGATIVE_INFINITY;   // -Infinity
+            double anotherPosInf = +1 / 0.0;            // Infinity
+            // Wartość nieokreślona
+            double nan = Double.NaN;                    // NaN
             /*
               char
               prezentacja pojedynczego znaku Unicode
