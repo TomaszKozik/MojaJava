@@ -6,9 +6,13 @@
 ###### nagłówek H6
 
 **Syrena**
+
 __Syrena__
+
 _ _Syrena_ _
+
 ***Syrena***
+
 ~~Syrena~~
 
 > Teskt cytowany
@@ -53,13 +57,17 @@ Lista zadań dla zakupu samochodu
 | Warszawa | M20      |
 
 Link
+
 [ParrotInWeb](http://kozik.ovh)
 
 Zdjęcie
+
 ![ParrotInWeb](http://kozik.ovh/images/logo/parrot_128x128_png.png "ParrotInWeb")
+
 <img src="http://kozik.ovh/images/logo/parrot_1000x1000_png.png" alt="" width="200" height="200" />
 
 Zdjęcie z likniem
+
 [![ParrotInWeb](http://kozik.ovh/images/logo/parrot_128x128_png.png "ParrotInWeb")](http://kozik.ovh)
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
