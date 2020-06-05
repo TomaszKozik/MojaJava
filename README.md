@@ -1,3 +1,7 @@
-![](https://img.shields.io/badge/tag-v.1.5.0-blue) ![](https://img.shields.io/badge/release-v.1.5.0-blue) ![](https://img.shields.io/badge/forks-1.9k-green) ![](https://img.shields.io/badge/coverage-20%25-red)
+# MojaJava
+Repozytorium z przykładami użycia Java w programowaniu i automatyzacji testów
 
-adfasdf
+Szczegółowe opisy znajdują sie pod adresem
+http://qahelper.kozik.ovh/
+
+Autor: Tomasz Kozik (ParrotInWeb)
