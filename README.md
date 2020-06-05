@@ -70,12 +70,7 @@ Zdjęcie z likniem
 
 [![ParrotInWeb](http://kozik.ovh/images/logo/parrot_128x128_png.png "ParrotInWeb")](http://kozik.ovh)
 
-![](https://img.shields.io/github/stars/pandao/editor.md.svg) ![]
-(https://img.shields.io/github/forks/pandao/editor.md.svg) ![]
-(https://img.shields.io/github/tag/pandao/editor.md.svg) ![]
-(https://img.shields.io/github/release/pandao/editor.md.svg) ![]
-(https://img.shields.io/github/issues/pandao/editor.md.svg) ![]
-(https://img.shields.io/bower/v/editor.md.svg)
+![](https://img.shields.io/github/stars/pandao/editor.md.svg) ![](https://img.shields.io/github/forks/pandao/editor.md.svg) ![](https://img.shields.io/github/tag/pandao/editor.md.svg) ![](https://img.shields.io/github/release/pandao/editor.md.svg) ![](https://img.shields.io/github/issues/pandao/editor.md.svg) ![](https://img.shields.io/bower/v/editor.md.svg)
 
 
 ## Spis treści
