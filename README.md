@@ -18,6 +18,8 @@ _ _Syrena_ _
 > Teskt cytowany
 > Syrena to polska królowa szos
 
+> dfasdf
+
 `System.out.println("Syrena 105L");`
 
 ```
@@ -28,7 +30,7 @@ System.out.println(samochody[2]); // Syrena
 System.out.println(samochody[3]); // Warszawa
 ```
 
-Lista punktówa: Samochody
+Lista punktowa: Samochody
 - Syrena 105L
 - Fiat 125P
 - Warszawa M20
