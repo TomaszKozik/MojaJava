@@ -1,4 +1,4 @@
-package klasyIMetody.refleksje;
+package klasyIMetody;
 
 /**
  * Weryfikacja instancji
