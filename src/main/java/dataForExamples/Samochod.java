@@ -1,4 +1,4 @@
-package DataForExamples;
+package dataForExamples;
 
 public class Samochod extends Pojazdy {
 
@@ -34,19 +34,19 @@ public class Samochod extends Pojazdy {
         this.nrRejestracyjny = nrRejestracyjny;
     }
 
-    public DataForExamples.Nadwozie getNadwozie() {
+    public dataForExamples.Nadwozie getNadwozie() {
         return Nadwozie;
     }
 
-    public void setNadwozie(DataForExamples.Nadwozie nadwozie) {
+    public void setNadwozie(dataForExamples.Nadwozie nadwozie) {
         Nadwozie = nadwozie;
     }
 
-    public DataForExamples.Silnik getSilnik() {
+    public dataForExamples.Silnik getSilnik() {
         return Silnik;
     }
 
-    public void setSilnik(DataForExamples.Silnik silnik) {
+    public void setSilnik(dataForExamples.Silnik silnik) {
         Silnik = silnik;
     }
 }

@@ -1,4 +1,4 @@
-package DataForExamples.kolekcje;
+package dataForExamples.kolekcje;
 
 import java.util.ArrayList;
 import java.util.List;

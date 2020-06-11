@@ -1,4 +1,4 @@
-package DataForExamples;
+package dataForExamples;
 
 public abstract class Pojazdy {
 

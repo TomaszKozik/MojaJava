@@ -1,6 +1,6 @@
 package klasyIMetody.refleksje;
 
-import DataForExamples.Samochod;
+import dataForExamples.Samochod;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;

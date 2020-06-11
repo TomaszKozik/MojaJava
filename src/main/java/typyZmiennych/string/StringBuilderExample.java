@@ -2,6 +2,7 @@ package typyZmiennych.string;
 
 import java.util.Scanner;
 
+//todo wrzucic na blog
 /**
  * Zastosowanie:
  * 1. Przyśpieszenie działania programu, gdy konieczne jest

@@ -1,8 +1,8 @@
-package DataForExamples;
+package dataForExamples;
 
-import DataForExamples.enums.Kolory;
-import DataForExamples.enums.RodzajNadwozia;
-import DataForExamples.enums.RodzajPaliwa;
+import dataForExamples.enums.Kolory;
+import dataForExamples.enums.RodzajNadwozia;
+import dataForExamples.enums.RodzajPaliwa;
 
 public class PrzykladoweSamochody {
 

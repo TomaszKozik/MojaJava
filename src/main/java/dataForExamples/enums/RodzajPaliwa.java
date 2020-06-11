@@ -1,4 +1,4 @@
-package DataForExamples.enums;
+package dataForExamples.enums;
 
 public enum RodzajPaliwa {
 

@@ -1,4 +1,4 @@
-package DataForExamples.enums;
+package dataForExamples.enums;
 
 public enum RodzajNadwozia {
 
@@ -25,4 +25,14 @@ public enum RodzajNadwozia {
     public String getRodzajNadwozia() {
         return rodzajNadwozia;
     }
+
+    public static RodzajNadwozia getRodzajNadwozia(String rodzajNadwozia) {
+        for (RodzajNadwozia rodzaj: values()) {
+            if (rodzajNadwozia.equals(rodzaj.rodzajNadwozia)) {
+                return rodzaj;
+            }
+        }
+        return null;
+    }
+
 }
