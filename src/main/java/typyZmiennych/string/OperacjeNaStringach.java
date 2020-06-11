@@ -1,4 +1,4 @@
-package string;
+package typyZmiennych.string;
 
 /**
  * Proste operacje na String'ach. Typu wypisanie Stringa, pobranie długości,

@@ -5,8 +5,6 @@ import java.util.Arrays;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
-import static java.util.stream.Collectors.toCollection;
-
 /**
  * ArrayList - jest to dynamiczna tablica. Jej ilość elementów może
  * wzrastać lub zmniejszać się.
@@ -17,6 +15,7 @@ import static java.util.stream.Collectors.toCollection;
  */
 public class ArrayList_Przyklady {
 
+    // todo wrzucić do qahelper.kozik.ovh
     /**
      * Przykłady inicjalizacji ArrayList
      */

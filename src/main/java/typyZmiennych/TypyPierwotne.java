@@ -1,3 +1,5 @@
+package typyZmiennych;
+
 public class TypyPierwotne {
 
     /**

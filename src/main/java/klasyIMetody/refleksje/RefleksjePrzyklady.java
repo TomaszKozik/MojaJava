@@ -1,5 +1,7 @@
 package klasyIMetody.refleksje;
 
+import DataForExamples.Samochod;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -49,7 +51,7 @@ public class RefleksjePrzyklady {
      * Przykłady pobiernia danych
      */
     public static void PrzykladyPobieraniaDanych() {
-        Samochody_KlasaDoPrzykladow samochody = new Samochody_KlasaDoPrzykladow();
+        Samochod samochody = new Samochod();
         Class samochod = samochody.getClass();
 
         // Pobieranie danych o kontruktorze danej klasy
@@ -111,6 +113,4 @@ public class RefleksjePrzyklady {
             System.out.println(field.getName());
         }
     }
-
-
 }
