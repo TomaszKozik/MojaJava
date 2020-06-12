@@ -3,6 +3,8 @@ package kolekcje;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import static java.util.Arrays.*;
+
 // todo wrzucić do qahelper.kozik.ovh
 public class RodzajeKolekcji {
     /**
@@ -50,7 +52,7 @@ public class RodzajeKolekcji {
             apteczka.add(2, "bandaże"); // [nożyczki, kompresy, bandaze, plastry, ustnik]
 
             // Dodanie innej kolekcji do już istniejącej
-            apteczka.addAll(Arrays.asList("agrafki", "koc")); // [nożyczki, kompresy, bandaze, plastry, ustnik, agrafki, koc]
+            apteczka.addAll(asList("agrafki", "koc")); // [nożyczki, kompresy, bandaze, plastry, ustnik, agrafki, koc]
 
             // Zamiania wartości dla danego indeksu
             apteczka.set(2, "opaska");  // [nożyczki, kompresy, opaska, plastry, ustnik, agrafki, koc]
@@ -62,10 +64,10 @@ public class RodzajeKolekcji {
             apteczka.remove(2); // [nożyczki, kompresy, plastry, agrafki, koc]
 
             // Usuwa elementy z kolekcji głównej niewspólne z inną kolekcją
-            apteczka.retainAll(Arrays.asList("nożyczki", "kompresy", "plastry", "agrafki")); // [nożyczki, kompresy, plastry, agrafki] - usuwa koc
+            apteczka.retainAll(asList("nożyczki", "kompresy", "plastry", "agrafki")); // [nożyczki, kompresy, plastry, agrafki] - usuwa koc
 
             // Usunięcie elementów według zgodnych z inną tablicą
-            apteczka.retainAll(Arrays.asList("nożyczki", "kompresy")); // [plastry, agrafki]]
+            apteczka.retainAll(asList("nożyczki", "kompresy")); // [plastry, agrafki]]
 
             // Sprawdzenie, czy element istnieje w tablicy
             apteczka.contains("nożyczki"); // true
@@ -118,7 +120,7 @@ public class RodzajeKolekcji {
               Na listach zmiennych działają wszystkie operacje, jak dla ArrayList<E>
              */
             // Lista niezmienna na podstawie listy elementów
-            List<String> niezmiennaLista = Arrays.asList("Syrena", "Fiat", "Warszawa");
+            List<String> niezmiennaLista = asList("Syrena", "Fiat", "Warszawa");
 
             // Lista niezmienna na podstawie listy elementów od Javy 9
             // List<String> niezmiennaListaOdJava9 = List.of("Syrena", "Fiat", "Warszawa");
@@ -137,7 +139,7 @@ public class RodzajeKolekcji {
              * Sortowanie listy
              * Znam dwa proste sposoby sortowania list przez strem i Collections
              */
-            List<String> listaSamochodow = Arrays.asList("Syrena", "Fiat", "Warszawa");
+            List<String> listaSamochodow = asList("Syrena", "Fiat", "Warszawa");
 
             // stream - tworzy nową mutowalną listę
             List<String> sortowanieStream = listaSamochodow.stream().sorted().collect(Collectors.toList());
@@ -211,6 +213,95 @@ public class RodzajeKolekcji {
             uniklanaListaSamochodow4.add("Fiat");
             uniklanaListaSamochodow4.add("Syrena");
             uniklanaListaSamochodow4.forEach(System.out::println); // Syrena, Warszawa, Fiat
+        }
+    }
+
+    /**
+     * Queue to kolekcja z ograniczonym dostępem do elementów:
+     * elementy są wstawiane na końcu i usuwane od początku
+     *
+     * Interfejs kolejkii to Queue<E> dla kolejek FIFO i rozszerza Collection<E>
+     * Interfejs kolejkii to Deque<E> dla kolejek FIFO i LIFO i rozszerza Collection<E>
+     * Instacjami dla obu jest new ArrayDeque<>()
+     *
+     * https://hyperskill.org/learn/step/3576
+     */
+    static class Kolekcja_Queue {
+        public static void main(String[] args) {
+
+
+            // Instancje Queue i Deque
+            Queue<String> instQueue = new ArrayDeque<>();
+            Deque<String> instDeque = new ArrayDeque<>();
+
+            /*
+              Queue - wstawieanie i usuwanie elementów
+             */
+            Queue<String> samochodyQueue = new ArrayDeque<>();
+            samochodyQueue.offer("Syrena");
+            samochodyQueue.offer("Fiat");
+            samochodyQueue.offer("Warszawa");
+            samochodyQueue.peek();  // Pobiera pierwszy element
+            samochodyQueue.poll();  // Pobiera i usuwa pierwszy element
+
+            /*
+              Deque - wstawieanie i usuwanie elementów
+             */
+            Deque<String> samochodyDeque = new ArrayDeque<>();
+            samochodyDeque.offerFirst("Syrena"); // Wstawienie na początek listy
+            samochodyDeque.offerLast("Fiat"); // Wstawienie na koniec listy
+            samochodyDeque.offer("Warszawa"); // Wstawienie na początek listy
+            samochodyDeque.peekFirst();  // Pobiera pierwszy element
+            samochodyDeque.pollFirst();  // Pobiera i usuwa pierwszy element
+            samochodyDeque.peekLast();  // Pobiera ostatni element
+            samochodyDeque.pollLast();  // Pobiera i usuwa ostatni element
+        }
+    }
+
+    /**
+     * Konwertowanie pomiędzy tablicami
+     */
+    static class KonwertoWanieKolekcji {
+        public static void main(String[] args) {
+
+            // Przykłady tablic
+            String[] tablicaString = {"a", "b", "c", "d"};
+            int[] tablicaInt = {1, 2, 3, 4};
+            Integer[] tablicaInteger = {5, 6, 7, 8};
+
+            // Kolekcje niezmienny
+            List<String> listNiezmienny = Arrays.asList("a", "b", "c", "d");
+
+            /*
+              List
+              Kolekcji List i innych kolekcji nie da się wykonać z tablic z typami pierwotnymi.
+              Muszą one być zrealizowane poprzez klasy opakowujące np. Integer.
+             */
+            List<String> listaZTablicaString = asList(tablicaString);
+            List<Integer> listaZTablicyInteger = Arrays.asList(tablicaInteger);
+
+            /*
+              Set, TreeSet, LinkedHashSet
+              Kolekcji Set nie da się zrobić bezpośrednio z zwykłej tablicy.
+              Można to zrealizować poprzez Listę
+             */
+            Set<String> setZTablicaString = new HashSet<>(Arrays.asList(tablicaString));
+            Set<String> setZListaZTablicaString = new HashSet<>(listaZTablicaString);
+            TreeSet<String> treeSetZTablicaString = new TreeSet<>(Arrays.asList(tablicaString));
+            LinkedHashSet<String> linkedHashSetZListaZTablicaString = new LinkedHashSet<>(listaZTablicaString);
+            List<String> listFromSet = new ArrayList<>(setZTablicaString);
+
+            /*
+              Queue i Deque
+             */
+            Queue<String> queueFromList = new ArrayDeque<>(listaZTablicaString);
+            Queue<String> queueFromSet = new ArrayDeque<>(setZListaZTablicaString);
+            Deque<String> dequeFromList = new ArrayDeque<>(listaZTablicaString);
+            Deque<String> dequeFromSet = new ArrayDeque<>(setZListaZTablicaString);
+            List<String> listFromQueue = new ArrayList<>(queueFromList);
+            List<String> listFromDeque = new ArrayList<>(dequeFromList);
+
+
         }
     }
 }
