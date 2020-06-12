@@ -1,9 +1,6 @@
 package kolekcje;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 // todo wrzucić do qahelper.kozik.ovh
@@ -52,17 +49,32 @@ public class RodzajeKolekcji {
             // Dodanie nowego elementu pod wskazany indeks. Wszystki elementy od tego indeksu są przesuwane w dalsze pozycje
             apteczka.add(2, "bandaże"); // [nożyczki, kompresy, bandaze, plastry, ustnik]
 
+            // Dodanie innej kolekcji do już istniejącej
+            apteczka.addAll(Arrays.asList("agrafki", "koc")); // [nożyczki, kompresy, bandaze, plastry, ustnik, agrafki, koc]
+
             // Zamiania wartości dla danego indeksu
-            apteczka.set(2, "opaska");  // [nożyczki, kompresy, opaska, plastry, ustnik]
+            apteczka.set(2, "opaska");  // [nożyczki, kompresy, opaska, plastry, ustnik, agrafki, koc]
 
             // Usuniecie elementu z tablicy według wartości
-            apteczka.remove("ustnik"); // [nożyczki, kompresy, opaska, plastry]
+            apteczka.remove("ustnik"); // [nożyczki, kompresy, opaska, plastry, agrafki, koc]
 
             // Usunięcie elementu z tablicy według indeksu
-            apteczka.remove(2); // [nożyczki, kompresy, plastry]
+            apteczka.remove(2); // [nożyczki, kompresy, plastry, agrafki, koc]
+
+            // Usuwa elementy z kolekcji głównej niewspólne z inną kolekcją
+            apteczka.retainAll(Arrays.asList("nożyczki", "kompresy", "plastry", "agrafki")); // [nożyczki, kompresy, plastry, agrafki] - usuwa koc
+
+            // Usunięcie elementów według zgodnych z inną tablicą
+            apteczka.retainAll(Arrays.asList("nożyczki", "kompresy")); // [plastry, agrafki]]
+
+            // Sprawdzenie, czy element istnieje w tablicy
+            apteczka.contains("nożyczki"); // true
 
             // Czyszczenie całej tablicy
             apteczka.clear();
+
+            // Sprawdzenie, czy tablica jest pusta
+            apteczka.isEmpty();
 
             // Sposoby wypisywania elementów tablic
             // foreach standardowe"
@@ -127,13 +139,78 @@ public class RodzajeKolekcji {
              */
             List<String> listaSamochodow = Arrays.asList("Syrena", "Fiat", "Warszawa");
 
-            // stream
+            // stream - tworzy nową mutowalną listę
             List<String> sortowanieStream = listaSamochodow.stream().sorted().collect(Collectors.toList());
             sortowanieStream.forEach(System.out::println);
 
-            // Collections
+            // Collections - pozostawia niemutowalną listę
             Collections.sort(listaSamochodow);
             listaSamochodow.forEach(System.out::println);
         }
-     }
+    }
+
+    /**
+     * Kolekcja Set to zbiór unikatowych elementów.
+     * W stosunku do ArrayList lub List Set nie posiada indeksu.
+     * Kolekcje Set są zmienne i niezmienne.
+     * Dziedziczy elementy po Collection<E>
+     * .add() i .addAll() dodają element o ile nie istnieje w tablicy
+     *
+     * Set ma trzy odmiany mutowalne:
+     * new HashSet<>() - podstawowy Set z unikalnymi elementami
+     * new TreesSet<>() - posortowany Set
+     * new LinkedHashSet<>() -
+     */
+    static class Kolekcja_Set {
+
+        public static void main(String[] args) {
+
+            // niezmienna tablica dla Java9
+            // Set<String> niezmiennaTablica = Set.of("Syerana", "Fiat", "Syrena"); // Syrena, Fiat
+
+            // HashSet - zmienny Set
+            Set<String> uniklanaListaSamochodow = new HashSet<>();
+            uniklanaListaSamochodow.add("Syrena");
+            uniklanaListaSamochodow.add("Warszawa");
+            uniklanaListaSamochodow.add("Fiat");
+            uniklanaListaSamochodow.add("Syrena");
+            uniklanaListaSamochodow.forEach(System.out::println); // Warszawa, Fiat, Syrena
+
+            // TreeSet - zmienny sortowany Set
+            // Set zamiennie z SortedSet, przy czym SortedSet dodaje kilka opcji
+            Set<String> uniklanaListaSamochodow2 = new TreeSet<>();
+            uniklanaListaSamochodow2.add("Syrena");
+            uniklanaListaSamochodow2.add("Warszawa");
+            uniklanaListaSamochodow2.add("Fiat");
+            uniklanaListaSamochodow2.add("Syrena");
+            uniklanaListaSamochodow2.forEach(System.out::println); // Fiat, Syrena, Warszawa
+
+            // TreeSet - z SortedSet
+            SortedSet<String> uniklanaListaSamochodow3 = new TreeSet<>();
+            uniklanaListaSamochodow3.add("Syrena");
+            uniklanaListaSamochodow3.add("Warszawa");
+            uniklanaListaSamochodow3.add("Fiat");
+            uniklanaListaSamochodow3.add("Syrena");
+            uniklanaListaSamochodow3.forEach(System.out::println); // Fiat, Syrena, Warszawa
+
+            // Opcje dodatkowe dla SortedSet
+            // Zwraca pierwszy element
+            uniklanaListaSamochodow3.first(); // Fiat
+            // Zwraca ostatni element
+            uniklanaListaSamochodow3.last(); // Warszawa
+            // Zwraca listę elementów z przed danego elementu
+            uniklanaListaSamochodow3.headSet("Warszawa"); // Fiat, Syrena
+
+            // LinedHashSet - zmienny Set
+            // LinkedSet gwarantuje, że kolejność elementów jest taka sama, jak kolejność ich wstawienia do zestawu
+            // Wynik LinkedHashSet to "Syrena, Warszawa, Fiat", dla samego HashSet "Syrena" była na końcu
+            // pomimo identycznego wprowadzania danych
+            Set<String> uniklanaListaSamochodow4 = new LinkedHashSet<>();
+            uniklanaListaSamochodow4.add("Syrena");
+            uniklanaListaSamochodow4.add("Warszawa");
+            uniklanaListaSamochodow4.add("Fiat");
+            uniklanaListaSamochodow4.add("Syrena");
+            uniklanaListaSamochodow4.forEach(System.out::println); // Syrena, Warszawa, Fiat
+        }
+    }
 }
