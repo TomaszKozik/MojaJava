@@ -170,7 +170,7 @@ public class RodzajeKolekcji {
             // niezmienna tablica dla Java9
             // Set<String> niezmiennaTablica = Set.of("Syerana", "Fiat", "Syrena"); // Syrena, Fiat
 
-            // HashSet - zmienny Set
+            // HashSet - zmienny Set - wynik wywołania Set za każdym razem może być inny (chodzi o kolejność)
             Set<String> uniklanaListaSamochodow = new HashSet<>();
             uniklanaListaSamochodow.add("Syrena");
             uniklanaListaSamochodow.add("Warszawa");
@@ -238,9 +238,9 @@ public class RodzajeKolekcji {
               Queue - wstawieanie i usuwanie elementów
              */
             Queue<String> samochodyQueue = new ArrayDeque<>();
-            samochodyQueue.offer("Syrena");
-            samochodyQueue.offer("Fiat");
-            samochodyQueue.offer("Warszawa");
+            samochodyQueue.offer("Syrena"); // Wstawia na koniec listy
+            samochodyQueue.offer("Fiat"); // Wstawia na koniec listy
+            samochodyQueue.offer("Warszawa"); // Wstawia na koniec listy
             samochodyQueue.peek();  // Pobiera pierwszy element
             samochodyQueue.poll();  // Pobiera i usuwa pierwszy element
 
