@@ -86,5 +86,14 @@ public class ScannerExample {
         System.out.println("Wprowadź dowolną wartość logiczna 'true' lub 'false'");
         Boolean aBoolean = scan.nextBoolean();
         System.out.println(aBoolean);
+
+        /**
+         * W przypadku Scanner warto jest zawsze korzystać z .nextLine(),
+         * a następnie popbraną wartość parsować na wymagany rodzaj zmiennej.
+         * Związane jest to z istotą dziąłania funkcji .nextXxx, która po wprowadzeniu
+         * wartości rząda podania wartości tekstowej dla nowej linii.
+         */
+        System.out.println("---- parsowanie ----");
+        int sparsowanyInt = Integer.parseInt(scan.nextLine());
     }
 }
