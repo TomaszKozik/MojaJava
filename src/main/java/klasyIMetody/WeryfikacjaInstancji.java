@@ -30,32 +30,6 @@ public class WeryfikacjaInstancji
             // boolean rowneSamochod = rower.getClass() == Samochod.class; // false
         }
     }
-
-
-    /**
-     * Zadanie 1
-     * Sprawdź instancje
-     */
-    static class Zadanie1 {
-        public static void main(String[] args) {
-            Pojazd pojazd1 = new Pojazd("EMP", "w", 23);
-            Pojazd pojazd2 = new Pojazd("EMP2", "w2", 2);
-            Pojazd pojazd3 = new Samochod("EMP3", "w3", 44, "asf", 5);
-            Pojazd[] pojazdy = {pojazd1, pojazd2, pojazd3};
-            determineWhoIsWho(pojazdy);
-        }
-
-        public static void determineWhoIsWho(Pojazd[] pojazdy) {
-            for (Pojazd pojazd : pojazdy) {
-                if (pojazd.getClass() == Samochod.class)
-                    System.out.println("Samochod");
-                else if (pojazd.getClass() == Rower.class)
-                    System.out.println("Rower");
-                else
-                    System.out.println("Pojazd");
-            }
-        }
-    }
 }
 
 // Klasy do przykładów
