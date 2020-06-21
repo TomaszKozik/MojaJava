@@ -24,7 +24,7 @@ public class ScannerExample {
 
         /*
           Ustawienia regionalne dla wprowadzanego tekstu.
-          Stosuje się je np. do definiowana speratara liczb dziesiętnych
+          Stosuje się je np. do definiowana seperatara liczb dziesiętnych
          */
         scan.useLocale(Locale.FRANCE); // wprowadzanie liczb z przecinkiem jako separatorem np. 50,102
         scan.useLocale(Locale.ENGLISH); // wprowadzanie liczb z kropką jako separatorem np. 50.102
@@ -89,9 +89,9 @@ public class ScannerExample {
 
         /**
          * W przypadku Scanner warto jest zawsze korzystać z .nextLine(),
-         * a następnie popbraną wartość parsować na wymagany rodzaj zmiennej.
-         * Związane jest to z istotą dziąłania funkcji .nextXxx, która po wprowadzeniu
-         * wartości rząda podania wartości tekstowej dla nowej linii.
+         * a następnie pobraną wartość parsować na wymagany rodzaj zmiennej.
+         * Związane jest to z istotą działania funkcji .nextXxx, która po wprowadzeniu
+         * wartości rząda dodatkowo podania wartości tekstowej dla nowej linii.
          */
         System.out.println("---- parsowanie ----");
         int sparsowanyInt = Integer.parseInt(scan.nextLine());
