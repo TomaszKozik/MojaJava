@@ -3,7 +3,6 @@ package typyZmiennych.string;
 import java.util.Locale;
 import java.util.Scanner;
 
-//todo wrzucic na blog
 /**
  * Zastosowanie: Pobranie od użytkownika danych wprowadzanych z klawiatury
  *
