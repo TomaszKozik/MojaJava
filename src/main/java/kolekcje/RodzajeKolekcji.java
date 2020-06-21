@@ -7,49 +7,6 @@ import static java.util.Arrays.*;
 // todo wrzucić do qahelper.kozik.ovh
 public class RodzajeKolekcji {
 
-
-    /**
-     * Queue to kolekcja z ograniczonym dostępem do elementów:
-     * elementy są wstawiane na końcu i usuwane od początku
-     *
-     * Interfejs kolejkii to Queue<E> dla kolejek FIFO i rozszerza Collection<E>
-     * Interfejs kolejkii to Deque<E> dla kolejek FIFO i LIFO i rozszerza Collection<E>
-     * Instacjami dla obu jest new ArrayDeque<>()
-     *
-     * https://hyperskill.org/learn/step/3576
-     */
-    static class Kolekcja_Queue {
-        public static void main(String[] args) {
-
-
-            // Instancje Queue i Deque
-            Queue<String> instQueue = new ArrayDeque<>();
-            Deque<String> instDeque = new ArrayDeque<>();
-
-            /*
-              Queue - wstawieanie i usuwanie elementów
-             */
-            Queue<String> samochodyQueue = new ArrayDeque<>();
-            samochodyQueue.offer("Syrena"); // Wstawia na koniec listy
-            samochodyQueue.offer("Fiat"); // Wstawia na koniec listy
-            samochodyQueue.offer("Warszawa"); // Wstawia na koniec listy
-            samochodyQueue.peek();  // Pobiera pierwszy element
-            samochodyQueue.poll();  // Pobiera i usuwa pierwszy element
-
-            /*
-              Deque - wstawieanie i usuwanie elementów
-             */
-            Deque<String> samochodyDeque = new ArrayDeque<>();
-            samochodyDeque.offerFirst("Syrena"); // Wstawienie na początek listy
-            samochodyDeque.offerLast("Fiat"); // Wstawienie na koniec listy
-            samochodyDeque.offer("Warszawa"); // Wstawienie na początek listy
-            samochodyDeque.peekFirst();  // Pobiera pierwszy element
-            samochodyDeque.pollFirst();  // Pobiera i usuwa pierwszy element
-            samochodyDeque.peekLast();  // Pobiera ostatni element
-            samochodyDeque.pollLast();  // Pobiera i usuwa ostatni element
-        }
-    }
-
     /**
      * Konwertowanie pomiędzy tablicami
      */
