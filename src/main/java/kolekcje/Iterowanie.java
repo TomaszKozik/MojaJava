@@ -9,7 +9,7 @@ import java.util.ListIterator;
  * Umożliwa przechodzenie do kolejnych lub poprzednich elementów kolekcji bez użycia pętli
  * oraz zmiany na nich.
  *
- * Intefejs Collection<E> rozszerza Iterable<E>, lecz nie rozszerza go Map<K, V>
+ * Interfejs Collection<E> rozszerza Iterable<E>, lecz nie rozszerza Map<K, V>
  */
 public class Iterowanie {
 
