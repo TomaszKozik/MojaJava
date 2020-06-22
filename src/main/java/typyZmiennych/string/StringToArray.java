@@ -1,4 +1,4 @@
-package string;
+package typyZmiennych.string;
 
 import java.util.*;
 

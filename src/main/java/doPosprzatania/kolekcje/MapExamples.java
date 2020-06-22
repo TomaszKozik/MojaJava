@@ -2,13 +2,45 @@ package doPosprzatania.kolekcje;
 
 import java.util.*;
 
+/**
+ * Map jest to kolekcja zawierająca parę klucz-wartość.
+ * Oznacza to, iż każdy element ma swój indywidualny (uniklany) klucz np. jakiś numer ewidencyjny.
+ * Najlepszym tego przykładem może być książka telefoniczna, gdzie kluczem jest osoba,
+ * a wartością numer telefonu.
+ *
+ * Klucze tworzą kolekcję Set. Są podobne do indeksów, lecz mogą mieć dowolny typ.
+ *
+ * Mapy są modyfikowalne, a od Java 9 również niemodyfikowalne.
+ *
+ * Interfejs Map<k,v> nie jest podtypem interfejsu Collection<E>.
+ */
 
-
-
-
-public class MapClass {
+public class MapExamples {
 
     public static void main(String[] args) {
+
+        // Tworzenie mapy niemodyfikowalnej (od Java 9)
+        /*
+        Map<String, String> emptyMap = Map.of();
+        Map<String, String> friendPhones = Map.of(
+                "Bob", "+1-202-555-0118",
+                "James", "+1-202-555-0220",
+                "Katy", "+1-202-555-0175"
+        );
+        */
+
+        // Tworzenie modyfikowalnej niesortowanej mapy
+        Map<Integer, String> mapLikeSet = new HashMap<>();
+
+        // Tworzenie modyfikowalnej niesortowanej mapy
+        Map<Integer, String> mapLikeLinkedSet = new LinkedHashMap<>();
+
+        // Tworzenie modyfikowalnej niesortowanej mapy
+        SortedMap<String, String> mapLikeTreeSet = new TreeMap<>();
+
+
+
+
 
         Scanner scan = new Scanner(System.in);
         String index = scan.nextLine();

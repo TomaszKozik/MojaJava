@@ -1,6 +1,4 @@
-package string;
-
-import java.util.Scanner;
+package typyZmiennych.string;
 
 /**
  * Zastosowanie:
@@ -16,7 +14,7 @@ public class StringBuilderExample {
         public static void main(String[] args) {
 
             /*
-              Zbudowanie Stringa w oparciu o StringBuilder
+              Zbudowanie String'a w oparciu o StringBuilder
               Wykorzystujemy do tego konstruktor klasy StringBuilder
               new StringBuilder(String str)
              */
@@ -27,7 +25,7 @@ public class StringBuilderExample {
 
 
             /*
-              Pobranie długości Stringa
+              Pobranie długości String'a
               Ta metoda nie modyfikuje obiektu
               .length()
              */
@@ -67,7 +65,7 @@ public class StringBuilderExample {
             System.out.println(sb); // 'Syrena 105'
 
             /*
-              Dodanie nowego stringa z już istniejącym stringiem
+              Dodanie nowego String'a z już istniejącym stringiem
               .append(String str)
              */
             System.out.println("---- Dodanie nowego stringa z już istniejącym stringiem  ----");
@@ -76,7 +74,7 @@ public class StringBuilderExample {
             System.out.println(sb); // 'Syrena 105L'
 
             /*
-              Połączenie nowego stringa z już istniejącym stringiem - rozszerzenie
+              Połączenie nowego String'a z już istniejącym stringiem - rozszerzenie
               Możliwe jest także wielokrotne wywoływanie tej metody na tym samym obiekcie
               w tej samej instrukcji, ponieważ ta metoda zwraca ten sam zmodyfikowany obiekt.
               .append(String str)
@@ -94,16 +92,16 @@ public class StringBuilderExample {
              */
 
             /*
-              Usuwanie znaków z Stringa w zależności od indeksu startowego i końcowego
+              Usuwanie znaków z String'a w zależności od indeksu startowego i końcowego
               .delete(int start, int end)
              */
             System.out.println("---- Usuwanie znaków z Stringa w zależności od indeksu startowego i końcowego ----");
-            sb.delete(11,84);
+            sb.delete(11, 84);
             System.out.println("Usunięcie wcześniej dodanych stringów według indeksu od 11 do 84. Wynik to:");
             System.out.println(sb); // Syrena 105L
 
             /*
-              Wstawianie stringa np. do środka innego stringa według indeksu
+              Wstawianie String'a np. do środka innego stringa według indeksu
               .insert(int offset, String str)
              */
             System.out.println("---- Wstawianie stringa np. do środka innego stringa według indeksu  ----");
@@ -112,16 +110,16 @@ public class StringBuilderExample {
             System.out.println(sb); // 'Syrena najlepsza to model 105L'
 
             /*
-              Zamiana fragmentu stringa na inny według indeksu początka i końca
+              Zamiana fragmentu String'a na inny według indeksu początka i końca
               .replace(int start, int end, String str)
              */
             System.out.println("---- Zamiana fragmentu stringa na inny według indeksu początka i końca ----");
-            sb.replace(7,20,"");
+            sb.replace(7, 20, "");
             System.out.println("Zamiana ze stringa 'Syrena najlepsza to model 105L' jego fragmentu 'najlepsza to ' na brak znaku, czyli w zasadzie usuwanie fragmentu");
             System.out.println(sb); // Syrena model 105L
 
             /*
-              Odwrócenie stringa
+              Odwrócenie String'a
               .reverse()
              */
             System.out.println("---- Odwrócenie stringa ----");
@@ -156,27 +154,6 @@ public class StringBuilderExample {
             System.out.println(sb.length()); // 18
             System.out.println("String 'Syrena 105L w kolorze wiśni' ma pojemność:");
             System.out.println(sb.capacity()); // 34
-        }
-    }
-
-    /**
-     * Zadanie https://hyperskill.org/learn/step/3813
-     * Usuń wszystkie cyfry i połącz otrzymane stringi bez spacji
-     */
-    static class ConcatenateStringsProblem {
-        public static String concatenateStringsWithoutDigits(String[] strings) {
-            StringBuilder messageBuilder = new StringBuilder();
-            for (String string : strings) {
-                messageBuilder.append(string.replaceAll("\\d", ""));
-            }
-            return messageBuilder.toString();
-        }
-
-        public static void main(String[] args) {
-            Scanner scanner = new Scanner(System.in);
-            String[] strings = scanner.nextLine().split("\\s+");
-            String result = concatenateStringsWithoutDigits(strings);
-            System.out.println(result);
         }
     }
 }

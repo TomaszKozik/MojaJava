@@ -1,7 +1,6 @@
-package string;
+package typyZmiennych.string;
 
-import java.lang.reflect.Array;
-
+//todo wrzucic na blog
 /**
  * Główna klasa Java Objectma toString()metodę uzyskania reprezentacji ciągu obiektu.
  * Jeśli chcesz mieć swój ciąg znaków, zastąp tę metodę w swojej klasie.
@@ -68,70 +67,6 @@ public class ToStringExample {
             @Override
             public String toString() {
                 return "Employee{name='" + name + ",salary=" + salary + "}";
-            }
-        }
-    }
-
-
-    // https://hyperskill.org/learn/step/3000
-    static class Zadanie1 {
-
-        private String login;
-        private String firstName;
-        private String lastName;
-
-        public Zadanie1(String login, String firstName, String lastName) {
-            this.login = login;
-            this.firstName = firstName;
-            this.lastName = lastName;
-        }
-
-        @Override
-        public String toString() {
-            return "login=" + login + ",firstName=" + firstName + ",lastName=" + lastName;
-        }
-    }
-
-    // https://hyperskill.org/learn/step/3002
-    static class Zadanie2 {
-        private int hours;
-        private int minutes;
-        private int seconds;
-
-        public Zadanie2(int hours, int minutes, int seconds) {
-            this.hours = hours;
-            this.minutes = minutes;
-            this.seconds = seconds;
-        }
-
-        @Override
-        public String toString() {
-            return String.format("%02d:%02d:%02d", hours, minutes, seconds);
-        }
-    }
-
-    // https://hyperskill.org/learn/step/3001
-    static class Zadanie3 {
-        static class Book {
-            private String title;
-            private int yearOfPublishing;
-            private String[] authors;
-
-            public Book(String title, int yearOfPublishing, String[] authors) {
-                this.title = title;
-                this.yearOfPublishing = yearOfPublishing;
-                this.authors = authors;
-            }
-
-            @Override
-            public String toString() {
-                return "title=" + title + ",yearOfPublishing=" + yearOfPublishing + ",authors=[" + String.join(",", authors) + "]";
-            }
-
-            public static void main(String[] args) {
-                String[] array = {"Mario Fusco", "Alan Mycroft"};
-                Book book = new Book("Java 8 & 9 in Action",2017, array);
-                System.out.println(book.toString());
             }
         }
     }
