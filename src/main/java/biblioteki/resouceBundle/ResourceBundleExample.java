@@ -1,4 +1,4 @@
-package biblioteki.resourceBundle;
+package biblioteki.resouceBundle;
 
 import java.util.Locale;
 import java.util.ResourceBundle;

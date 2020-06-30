@@ -1,4 +1,4 @@
-package biblioteki.resourceBundle;
+package biblioteki;
 
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
