@@ -10,7 +10,7 @@ package klasyIMetody;
 public class EnumExamples {
 
     /**
-     * Lista wyliczeniowa MojeSamochody
+     * Lista wyliczeniowa dla MojeSamochody
      */
     public enum MojeSamochody {
 
@@ -29,8 +29,8 @@ public class EnumExamples {
         POLONEZ("Polonez Atu", "czerwony");
 
         /**
-         * enum zachowuje się, jak klasa przy czym operuje stałych.
-         * Dzięki takiemu zachowaniu tworzymy zmienne obietku, konstruktor i gettery.
+         * enum zachowuje się, jak klasa przy czym operuje na stałych.
+         * Dzięki takiemu zachowaniu tworzymy zmienne obiektu, konstruktor i gettery.
          * Dzięki nim właśnie mamy możliwość zwiększenia ilości właściwości danej stałej.
          */
         String markaModel;
@@ -78,7 +78,7 @@ public class EnumExamples {
         String modelIMarkaPoloneza = MojeSamochody.POLONEZ.getMarkaModel(); // Polonez Atu
         System.out.println(modelIMarkaPoloneza);
 
-        // Pobrenie koloru dla SYRENA2
+        // Pobranie  koloru dla SYRENA2
         System.out.println("---- Pobrenie koloru dla SYRENA2 ----");
         String kolorSyrenaBosto = MojeSamochody.SYRENA2.getKolor(); // wiśniowa
         System.out.println(kolorSyrenaBosto);
@@ -90,7 +90,7 @@ public class EnumExamples {
             System.out.println(mojeSamochody);
         }
 
-        // Pobranie ilości6 wszystkich stałych
+        // Pobranie ilości wszystkich stałych
         System.out.println("---- Pobranie ilości wszystkich stałych ----");
         int iloscSamochodow = MojeSamochody.values().length; // 4
         System.out.println(iloscSamochodow);

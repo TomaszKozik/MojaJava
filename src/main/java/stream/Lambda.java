@@ -10,6 +10,11 @@ import java.util.function.Function;
  * Dozwolone jest stosowanie w nich metod domyślnych i statycznych
  * Oznacza się je adnotacją @FunctionalInterface
  *
+ * Lambdy zastępują klasy anonimowe, dzięki czemu dają możliwość ograniczenia ilości pisanego kodu.
+ * Tworzy się je na podstawie ówcześnie zdefiniowanych interfejsów,
+ * które z kolei mogą zawierać dowolną ilość metod statycznych, domyślnych i stałych,
+ * lecz wyłącznie jedną metodę abstrakcyjną.
+ *
  *
  * https://hyperskill.org/learn/step/3601
  */
