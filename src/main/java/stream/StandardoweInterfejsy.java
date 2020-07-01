@@ -8,11 +8,11 @@ import java.util.function.*;
  * Pakiet zawiera ponad 40 funkcjonalnych interfejsów pięciu grup: funkcji , operatorów , predykatów , dostawców i konsumentów .
  *
  * Grupy:
- *   * funkcje (Function<T, R>) akceptują argumenty i generują wyniki.
- *   * operatory (UnaryOperator<T>) generują wyniki tego samego typu co ich argumenty (specjalny przypadek funkcji).
- *   * predykaty (Predicate<T>, BiPredicate<T, R>) zwracają wartości boolowskie i akceptują wszelkie argumenty (funkcja o wartości boolowskiej).
- *   * dostawcy (Supplier) zwracają wartości i niczego nie akceptują.
- *   * konsumenci (Consumer) akceptują argumenty i nie zwracają wyników.
+ * * funkcje (Function<T, R>, BiFunction<T, U, R>) akceptują argumenty i generują wyniki.
+ * * operatory (UnaryOperator<T>) generują wyniki tego samego typu co ich argumenty (specjalny przypadek funkcji).
+ * * predykaty (Predicate<T>, BiPredicate<T, U>) zwracają wartości boolowskie i akceptują wszelkie argumenty (funkcja o wartości boolowskiej).
+ * * dostawcy (Supplier<T>) zwracają wartości i niczego nie akceptują.
+ * * konsumenci (Consumer<T>, BiConsumer<T, U>) akceptują argumenty i nie zwracają wyników.
  *
  * Główne różnice między interfejsami funkcjonalnymi w tej samej grupie to liczba argumentów i ogólna lub nie.
  */
