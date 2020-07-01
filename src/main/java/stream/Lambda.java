@@ -4,82 +4,27 @@ import java.util.function.BiFunction;
 import java.util.function.Function;
 
 /**
- * Interfejsy funkcjonalne i wyrażenia lambda
- *
- * Intefejsy funkcjonalne to interfejsy zbudowane z jednej metody abstrakcyjnej.
- * Dozwolone jest stosowanie w nich metod domyślnych i statycznych
- * Oznacza się je adnotacją @FunctionalInterface
- *
+ * Wyrażenia lambda
+ * <p>
  * Lambdy zastępują klasy anonimowe, dzięki czemu dają możliwość ograniczenia ilości pisanego kodu.
  * Tworzy się je na podstawie ówcześnie zdefiniowanych interfejsów,
  * które z kolei mogą zawierać dowolną ilość metod statycznych, domyślnych i stałych,
  * lecz wyłącznie jedną metodę abstrakcyjną.
- *
- *
+ * <p>
+ * <p>
  * https://hyperskill.org/learn/step/3601
  */
 public class Lambda {
 
     /**
-     * Przykłady intefejsów dunkcjonalnych
+     * Porównanie klasy anonimowej i lambdy
+     * na podstawie intrefejsu Func z powyższego przykładu
      */
-    @FunctionalInterface
-    interface Nothing {
-        void nothing ();
-    }
-
-    @FunctionalInterface
-    interface Greeting {
-        void saySomething (String string);
-    }
-
-    @FunctionalInterface
-    interface MyMath {
-        int twoInt (int i, int j);
-    }
-
-    @FunctionalInterface
-    interface Func<T, R> {
-        R apply(T val);
-
-        static void doNothingStatic() { }
-
-        default void doNothingByDefault() { }
-    }
-
-    /**
-     * Przykłady wywołania intefejsów
-     */
-    public static void main(String args[]) {
-        // Bez parametrów
-        Nothing doNothing = () -> System.out.println("aa");
-        doNothing.nothing();
-
-        // Jeden parametr na wejściu
-        Greeting sayHello = text -> System.out.println("Say " + text);
-        sayHello.saySomething("Tomek");
-
-        // Dwa paremetry na wejściu, wyjście obliczeniowe
-        MyMath multiply = (i, j) -> i * j;
-        int b = multiply.twoInt(5,5);
-        System.out.println(b);
-
-        // Dwa paremetry na wejściu, wyjście obliczeniowe z klamrami
-        MyMath added = (i, j) -> {int aInternal = i * 100;
-            int bInternal = j * 100;
-            return aInternal + bInternal;};
-        int c = added.twoInt(5,5);
-        System.out.println(c);
-    }
-
-    /**
-     * Przykłady wykorzystania interfesjów funkcjonalnych
-     */
-    static class PrzykladWykorzystania {
+    static class PorownanieLambdaIKlasyAnonimowej {
         public static void main(String[] args) {
 
             // Klasa anonimowa
-            Func<Long, Long> square = new Func<Long, Long>() {
+            InterfejsFunkcjonalny.Func<Long, Long> square = new InterfejsFunkcjonalny.Func<Long, Long>() {
                 @Override
                 public Long apply(Long val) {
                     return val * val;
@@ -88,7 +33,7 @@ public class Lambda {
             long val = square.apply(10L); // 100L
 
             // Wyrażenie lambda
-            Func<Long, Long> square2 = val2 -> val2 * val2;
+            InterfejsFunkcjonalny.Func<Long, Long> square2 = val2 -> val2 * val2;
             long val2 = square2.apply(10L); // 100L
         }
     }
@@ -108,22 +53,22 @@ public class Lambda {
             // Wyrażanie z określeniem typu
             Function<Integer, Integer> mult = (Integer x) -> x * 2;
 
+            // Wyrażenie przyjmujące dwa elementy i zwracające jeden element
+            BiFunction<Integer, Integer, Integer> sum = (x, y) -> x + y;
+
             // Wyrażenie z wieloma instrukcjami
             Function<Integer, Integer> adder = (x) -> {
                 x += 5;
                 x += 10;
                 return x;
             };
-
-            // Wyrażenie przyjmujące dwa elementy i zwracające jeden element
-            BiFunction<Integer, Integer, Integer> sum = (x, y) -> x + y;
         }
     }
 
     /**
      * Przekazywanie wyrażeń lambda do metod, jako argumentów
      */
-    static class PrzekazywanieLambdaDoMetodJakoArgumentow {
+    static class LambdaJakoArgumentMetody {
 
         /**
          * Przykładowa metoda przyjmująca wyrażenie lambda
@@ -133,7 +78,7 @@ public class Lambda {
         }
 
         /**
-         * Przykłady wywołania metody z wyrażeniem lamda
+         * Przykłady wywołania metody z wyrażeniem lambda
          */
         public static void main(String[] args) {
             // Sposób pierwszy
@@ -146,7 +91,7 @@ public class Lambda {
     }
 
     /**
-     * Przekazywanie argumentów dodatkowych
+     * Przekazywanie argumentów dodatkowych do lambd
      */
     static class PrzekazywanieArgumentowDodatkowych {
         public static void main(String[] args) {
