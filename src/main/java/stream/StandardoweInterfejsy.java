@@ -20,7 +20,6 @@ public class StandardoweInterfejsy {
     public static void main(String[] args) {
 
         // Function<T, R>
-        // String to Integer function
         Function<String, Integer> converter = Integer::parseInt;
         converter.apply("1000"); // 1000
 
