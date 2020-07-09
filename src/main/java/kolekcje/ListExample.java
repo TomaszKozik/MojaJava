@@ -50,7 +50,6 @@ public class ListExample {
         List<String> listaModyfikowalna3 = new ArrayList<>(Arrays.asList(listaNiemodyfikowalna7));
 
 
-
         //  Sortowanie listy
 
         //Lista do poniższych przykładów:
@@ -63,5 +62,9 @@ public class ListExample {
         // Collections - nie zmienia rodzaju listy
         Collections.sort(listaSamochodow);
         listaSamochodow.forEach(System.out::println);
+
+        // SubLista - wyodrębnienie listy po numerze indeksu
+        List<String> listaSamochodow2 = asList("Syrena", "Fiat", "Warszawa");
+        List<String> wyselekcjonowaneSamochody = listaSamochodow2.subList(1, 2);
     }
 }
