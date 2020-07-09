@@ -17,6 +17,7 @@ public class StreamyNaPrymitywnychWartosciach {
 
     // Pobieranie min, max, avg, sum, count i danych statytycznych
     public static void minMaxAvgSum() {
+        // Przykładowa tablica
         int[] numbers = { 10, 11, 25, 14, 22, 21, 18 };
 
         int max = IntStream.of(numbers).max().getAsInt();
@@ -67,6 +68,7 @@ public class StreamyNaPrymitywnychWartosciach {
     }
 
     public static void laczenieStrumieni() {
+        // Strumienie do połączenia
         IntStream stream1 = IntStream.of(2, 4, 6);
         IntStream stream2 = IntStream.of(1, 3, 5);
 
