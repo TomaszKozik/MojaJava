@@ -6,9 +6,16 @@ import java.util.stream.Collectors;
 import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 
+/**
+ * Java umożliwia pracę strumieni na typach pierwotnych,
+ * dzięki czemu działanie strumieni może być szybsze
+ * pomijając mapowanie danych na inne typy danych
+ *
+ * Streamy na typach pierwotnych mają również kilka dodatkowych funkcji.
+ */
 public class StreamyNaPrymitywnychWartosciach {
 
-
+    // Pobieranie min, max, avg, sum, count i danych statytycznych
     public static void minMaxAvgSum() {
         int[] numbers = { 10, 11, 25, 14, 22, 21, 18 };
 
@@ -43,6 +50,7 @@ public class StreamyNaPrymitywnychWartosciach {
 
     public static void iteracja() {
         // seed - numer początkowy iteracji
+        // przykład i -> i + 5 działa na podobnej zasadzie do pętli for
         // limit - określa ilość wyiterowanych elementów
         IntStream.iterate (10, i -> i + 5)
                 .limit (5)
@@ -50,6 +58,7 @@ public class StreamyNaPrymitywnychWartosciach {
     }
 
     public static void charsToIntStream() {
+        // Zkolekcjonowanie wartości int znaków ze String'a 'Syrana'
         List<Integer> charsInInt = "Syrena"
                 .chars()
                 .boxed()
