@@ -1,4 +1,6 @@
-package stream;
+package lambda;
+
+import lambda.InterfejsFunkcjonalny;
 
 import java.util.function.BiFunction;
 import java.util.function.Function;
@@ -36,6 +38,10 @@ public class Lambda {
             InterfejsFunkcjonalny.Func<Long, Long> square2 = val2 -> val2 * val2;
             long val2 = square2.apply(10L); // 100L
         }
+    }
+
+    interface square {
+
     }
 
     /**
