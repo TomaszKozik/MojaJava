@@ -15,7 +15,7 @@ public class MapExamples {
         // Mapa podstawowa
         Map<String, String> mapaHash = new HashMap<>();
 
-        // Mapa zapamiętująca kolejność dodawania elementów
+            // Mapa zapamiętująca kolejność dodawania elementów
         Map<String, String> mapaLinked = new LinkedHashMap<>();
 
         // Mapa z sortowaniem elementów po kluczu
@@ -40,6 +40,9 @@ public class MapExamples {
         listaSamochodow.containsValue("105L");  // Zwraca 'true' jeśli lista zawiera daną wartość
     }
 
+    /**
+     * Metody dla TreeMap
+     */
     public static void metodyDlaTreeMap() {
         SortedMap<String, String> listaSamochodow = new TreeMap<>();
         listaSamochodow.put("Syrena", "105L");    // Dodaj klucz i wartość. Mapa zawiera: 'Syrena:105L'
@@ -77,7 +80,6 @@ public class MapExamples {
         listaSamochodow.putIfAbsent("Warszawa", "M20");
 
         listaSamochodow.forEach((k, v) -> System.out.println((k + ":" + v)));
-
     }
 
     /**
