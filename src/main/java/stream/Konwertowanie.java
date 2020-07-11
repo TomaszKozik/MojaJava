@@ -11,7 +11,21 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public class KonwertowanieStreamow {
+
+public class Konwertowanie {
+
+    /**
+     * Stream to String
+     */
+    public static void stream2String() {
+        List<String> listaSamochodow = new ArrayList<>();
+        listaSamochodow.add("Syrena 105L");
+        listaSamochodow.add("Fiat 125P");
+        listaSamochodow.add("Warszawa M20");
+
+        String nowaListaSamochodow = listaSamochodow.stream()
+                .collect(Collectors.joining(" | ")); // Syrena 105L | Fiat 125P | Warszawa M20
+    }
 
     /**
      * Stream do tablicy
@@ -42,6 +56,20 @@ public class KonwertowanieStreamow {
     }
 
     /**
+     * Stream do listy
+     * .collect(Collectors.toList())
+     */
+    public static void stream2List_2sposob() {
+        List<String> listaSamochodow = new ArrayList<>();
+        listaSamochodow.add("Syrena 105L");
+        listaSamochodow.add("Fiat 125P");
+        listaSamochodow.add("Warszawa M20");
+
+        List<String> nowaListaSamochodow = listaSamochodow.stream()
+                .collect(Collectors.toCollection(ArrayList::new));
+    }
+
+    /**
      * Stream do mapy
      * .collect(Collectors.toMap(<key>,<value>)
      */
@@ -49,7 +77,6 @@ public class KonwertowanieStreamow {
         Map<String, String> nowaListaSamochodow = PrzykladoweSamochody.listaSamochodow().stream()
                 .collect(Collectors.toMap(Samochod::getMarka, Samochod::getModel));
     }
-
 
     /**
      * Lista Integer do IntStream
