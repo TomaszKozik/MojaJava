@@ -57,7 +57,7 @@ public class Konwertowanie {
 
     /**
      * Stream do listy
-     * .collect(Collectors.toList())
+     * .collect(Collectors.toCollection<kolekcja>)
      */
     public static void stream2List_2sposob() {
         List<String> listaSamochodow = new ArrayList<>();
