@@ -1,5 +1,7 @@
 package dataForExamples;
 
+import java.util.function.Function;
+
 public class Samochod extends Pojazdy {
 
     public double spalanie;
@@ -48,5 +50,31 @@ public class Samochod extends Pojazdy {
 
     public void setSilnik(dataForExamples.Silnik silnik) {
         Silnik = silnik;
+    }
+
+
+    public static Function<String,
+            Function<String,
+                    Function<String,
+                            Function<Integer,
+                                    Function<Double,
+                                            Function<String,
+                                                    Function<String,
+                                                            Function<Integer,
+                                                                    Function<Integer,
+                                                                            Function<String,
+                                                                                    Function<Integer, Samochod>>>>>>>>>>> builder() {
+        return marka
+                -> model
+                -> kolor
+                -> przebieg
+                -> spalanie
+                -> kategoria
+                -> rodzaj
+                -> iloscDrzwi
+                -> iloscMiejsc
+                -> rodzajPaliwa
+                -> pojemnoscSkokowa
+                -> new Samochod(marka, model, kolor, przebieg, spalanie, kategoria, rodzaj, iloscDrzwi, iloscMiejsc, rodzajPaliwa, pojemnoscSkokowa);
     }
 }
