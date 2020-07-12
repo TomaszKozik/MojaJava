@@ -16,7 +16,7 @@ public class Currying {
 
     /**
      * Przykłady dla funkcji dodawania dwóch liczb.
-     * Przedstawiony jest sposób od najprostszego wykorzystania Suppliera,
+     * Przedstawione są sposoby na realizację funkcji dodawania dwóch liczb począwszy od Supplier'a,
      * aż po funkcje złożone, umożliwiające wprowadzanie parametrów i rodzaju operacji.
      */
     public static void dodawanie() {
@@ -35,7 +35,7 @@ public class Currying {
         // Pobiera parametr 'a' i ma na szytwono wprowadzony parametr '5';
         // Daje wynik w zdeklarowanym typie Integer.
         Function<Integer, Integer> sum2 =
-                (a) -> a + 5;                     // Function, czyli a, pobiera parametr Integer, czyli 5, i daje wynik integer
+                (a) -> a + 5;
         int wynik2 = sum2.apply(2);  // 7
         System.out.println("UnaryOperator: " + wynik2);  // 7
 
@@ -44,7 +44,7 @@ public class Currying {
         // Pobiera parametr 'a' i 'b';
         // Daje wynik w zdeklarowanym typie Integer.
         BiFunction<Integer, Integer, Integer> sum3 =
-                (a, b) -> a + b;                // BiFunction, czyli a i b, pobiera Integer "2" i Integer "5
+                (a, b) -> a + b;
         int wynik3 = sum3.apply(2, 5); // 7
         System.out.println("BiFunction: " + wynik3);  // 7
 
@@ -55,8 +55,8 @@ public class Currying {
         // Daje wynik w zdeklarowanym typie Integer.
         Function<BiFunction<Integer, Integer, Integer>, Integer> sum4 =
                 (a) -> a.apply(2, 5);
-        int wynik4 = sum4.apply((x, y) -> x + y);
-        System.out.println("Currying1: " + wynik4);
+        int wynik4 = sum4.apply((x, y) -> x + y);  // 7
+        System.out.println("Currying1: " + wynik4);  // 7
 
         // Currying: Przekazanie funkcji dodawania i jednego parametru z wynikiem jako funkcja
         // Funkcja '()', w tym przypadku Function przyjmuje jeden parametr;
@@ -68,8 +68,8 @@ public class Currying {
         Function<BiFunction<Integer, Integer, Integer>, Function<Integer, Integer>> preSum5 =
                 (a) -> (b) -> a.apply(b, 5);
         Function sum5 = preSum5.apply((x, y) -> x + y);
-        int wynik5 = (int) sum5.apply(2);
-        System.out.println("Currying2: " + wynik5);
+        int wynik5 = (int) sum5.apply(2);  // 7
+        System.out.println("Currying2: " + wynik5);  // 7
 
         // Currying: Przekazanie funkcji dodawania i jednego parametru z wynikiem jako Integer
         // Funkcja '()', w tym przypadku Function przyjmuje jeden parametr;
@@ -81,8 +81,8 @@ public class Currying {
         // przyczym dzięki zastosowanie drugiego .apply() realizujemy całą główną funkcję.
         Function<BiFunction<Integer, Integer, Integer>, Function<Integer, Integer>> sum6 =
                 (a) -> (b) -> a.apply(b, 5);
-        int wynik6 = sum6.apply((x, y) -> x + y).apply(2);
-        System.out.println("Currying3: " + wynik6);
+        int wynik6 = sum6.apply((x, y) -> x + y).apply(2);  // 7
+        System.out.println("Currying3: " + wynik6);  // 7
 
         // Currying: Przekazanie funkcji dodawania i dwóch parametrów
         // Funkcja '()', w tym przypadku Function przyjmuje jeden parametr;
@@ -95,15 +95,14 @@ public class Currying {
         // z ustawionym oczekiwanym typem.
         Function<BiFunction<Integer, Integer, Integer>, BiFunction<Integer, Integer, Integer>> sum7 =
                 (a) -> (b, c) -> a.apply(b, c);
-        int wynik7 = sum7.apply((x, y) -> x + y).apply(2, 5);
-        System.out.println("Currying4: " + wynik7);
+        int wynik7 = sum7.apply((x, y) -> x + y).apply(2, 5);  // 7
+        System.out.println("Currying4: " + wynik7);  // 7
     }
 
     /**
      * Wykorzystanie Consumera do wypisywania listy elementów
      */
     public static void consumerJakoWynik() {
-        // Currying: Przekazanie funkcji dodawania i dwóch parametrów
         // Funkcja '()', w tym przypadku Function przyjmuje jeden parametr;
         // Pobiera parametr 'f', który jest String'iem
         // Zwraca Consumer z String'iem, który obsługujemy w pętli for
