@@ -10,124 +10,51 @@ package typyZmiennych.string;
  */
 public class StringBuilderExample {
 
-    static class OperacjeNaObiektachStringBuilder {
-        public static void main(String[] args) {
+    public static void main(String[] args) {
 
-            /*
-              Zbudowanie String'a w oparciu o StringBuilder
-              Wykorzystujemy do tego konstruktor klasy StringBuilder
-              new StringBuilder(String str)
-             */
-            System.out.println("---- Zbudowanie Stringa w oparciu o StringBuilder ----");
-            StringBuilder sb = new StringBuilder("Syrena 105L");
-            System.out.println("Utworzony string to:");
-            System.out.println(sb); // Syrena 105L
+        System.out.println("---- Budowanie String'a 'Syrena 105L' za pomocą StringBuilder ----");
+        StringBuilder stringBuilder = new StringBuilder("Syrena 105L");
+        System.out.println(stringBuilder);              // Syrena 105L
 
+        System.out.println("---- Pobranie String'a 'Syrena 105L' ----");
+        System.out.println(stringBuilder.length());     // 11
 
-            /*
-              Pobranie długości String'a
-              Ta metoda nie modyfikuje obiektu
-              .length()
-             */
-            System.out.println("---- Pobranie długości stringa ----");
-            System.out.println("Długość stringa 'Syrena 105L' to:");
-            System.out.println(sb.length()); // 16
+        System.out.println("---- Zwrócenie znaku zgodnie z indeksem ----");
+        System.out.println(stringBuilder.charAt(5));    // a
 
-            /*
-              Zwrócenie znaku zgodnie z indeksem.
-              Indeks liczymy o 0
-              Ta metoda nie modyfikuje obiektu
-              .charAt(int index)
-             */
-            System.out.println("---- Zwrócenie znaku zgodnie z indeksem ----");
-            System.out.println("Indeks 0 dla stringa 'Syrena 105L' to: ");
-            System.out.println(sb.charAt(0)); // 'S'
-            System.out.println("Indeks 7 dla stringa 'Syrena 105L' to:");
-            System.out.println(sb.charAt(7)); // '1'
+        System.out.println("---- Zamiana znaku w ciągu względem indeksu ----");
+        stringBuilder.setCharAt(6, '-');
+        System.out.println(stringBuilder);              // Syrena-105L
 
-            /*
-              Zamiana znaku w ciągu względem indeksu
-              .setCharAt(int index, char ch)
-             */
-            System.out.println("---- Zamiana znaku w ciągu względem indeksu ----");
-            sb.setCharAt(6, '-');
-            System.out.println("Zamieniono spację (indeks 6) na myślnik dla stringa 'Syrena 105L' Wynik to:");
-            System.out.println(sb); // 'Syrena-105L
-            sb.setCharAt(6, ' '); // 'Syrena 105 L'
+        System.out.println("---- Zamiana fragmentu stringa na inny według indeksu początka i końca ----");
+        stringBuilder.replace(6, 7, " ");
+        System.out.println(stringBuilder);              // Syrena model 105L
 
-            /*
-              Usunięcie znaku z ciągu zgodnie z indeksem
-              .deleteCharAt(int index)
-             */
-            System.out.println("---- Usunięcie znaku z ciągu zgodnie z indeksem ----");
-            sb.deleteCharAt(10);
-            System.out.println("Usunięto literę 'L' z Stringa 'Syrena 105L'. Wynik to:");
-            System.out.println(sb); // 'Syrena 105'
+        System.out.println("---- Usunięcie litery 'L' z ciągu 'Syrena-105L' zgodnie z numerem indeksu ----");
+        stringBuilder.deleteCharAt(10);
+        System.out.println(stringBuilder);              // 'Syrena 105'
 
-            /*
-              Dodanie nowego String'a z już istniejącym stringiem
-              .append(String str)
-             */
-            System.out.println("---- Dodanie nowego stringa z już istniejącym stringiem  ----");
-            sb.append("L");
-            System.out.println("Dodano literę 'L' do stringa 'Syrena 105'. Wynik to:");
-            System.out.println(sb); // 'Syrena 105L'
+        System.out.println("---- Dodanie nowego String'a (litery 'L') do String'a 'Syrena-105'  ----");
+        stringBuilder.append("L");
+        System.out.println(stringBuilder);              // 'Syrena 105L'
 
-            /*
-              Połączenie nowego String'a z już istniejącym stringiem - rozszerzenie
-              Możliwe jest także wielokrotne wywoływanie tej metody na tym samym obiekcie
-              w tej samej instrukcji, ponieważ ta metoda zwraca ten sam zmodyfikowany obiekt.
-              .append(String str)
-             */
-            System.out.println("---- Połączenie nowego stringa z już istniejącym stringiem - rozszerzenie ----");
-            sb.append("\n")
-                    .append("Wyprodukowany w 1980r. Jego długość to 4,04m.\n")
-                    .append("Włączyłem go dziś o 01:05.");
-            System.out.println("Dodanie wielu stringów do stringa 'Syrena 105L'. Wynik to:");
-            System.out.println(sb);
-            /*
-            Syrena 105L
-            Wyprodukowany w 1980r. Jego długość to 4,04m.
-            Włączyłem go dziś o 01:05.
-             */
+        System.out.println("---- Dodanie nowego String'a ' Wyprodukowany w 1980r. Jego długość to 4,04m.' do String'a 'Syrena-105L'  ----");
+        stringBuilder.append(" Wyprodukowany w 1980r. Jego długość to 4,04m.");
+        System.out.println(stringBuilder);              // 'Syrena 105L Wyprodukowany w 1980r. Jego długość to 4,04m.'
 
-            /*
-              Usuwanie znaków z String'a w zależności od indeksu startowego i końcowego
-              .delete(int start, int end)
-             */
-            System.out.println("---- Usuwanie znaków z Stringa w zależności od indeksu startowego i końcowego ----");
-            sb.delete(11, 84);
-            System.out.println("Usunięcie wcześniej dodanych stringów według indeksu od 11 do 84. Wynik to:");
-            System.out.println(sb); // Syrena 105L
+        System.out.println("---- Usuwanie znaków z String'a ' Wyprodukowany w 1980r. Jego długość to 4,04m.' w zależności od indeksu startowego i końcowego ----");
+        stringBuilder.delete(11, 84);
+        System.out.println(stringBuilder);              // Syrena 105L
 
-            /*
-              Wstawianie String'a np. do środka innego stringa według indeksu
-              .insert(int offset, String str)
-             */
-            System.out.println("---- Wstawianie stringa np. do środka innego stringa według indeksu  ----");
-            sb.insert(7, "najlepsza to model ");
-            System.out.println("Wstawienie stringa 'najlepsza to ' do stringa 'Syrena 105L'. Wynik to:");
-            System.out.println(sb); // 'Syrena najlepsza to model 105L'
+        System.out.println("---- Wstawianie stringa np. do środka innego stringa według indeksu  ----");
+        stringBuilder.insert(7, "najlepsza to model ");
+        System.out.println(stringBuilder);              // 'Syrena najlepsza to model 105L'
 
-            /*
-              Zamiana fragmentu String'a na inny według indeksu początka i końca
-              .replace(int start, int end, String str)
-             */
-            System.out.println("---- Zamiana fragmentu stringa na inny według indeksu początka i końca ----");
-            sb.replace(7, 20, "");
-            System.out.println("Zamiana ze stringa 'Syrena najlepsza to model 105L' jego fragmentu 'najlepsza to ' na brak znaku, czyli w zasadzie usuwanie fragmentu");
-            System.out.println(sb); // Syrena model 105L
-
-            /*
-              Odwrócenie String'a
-              .reverse()
-             */
-            System.out.println("---- Odwrócenie stringa ----");
-            sb.reverse();
-            System.out.println("Odwrócenie stringa 'Syrena model 105L' da wynik:");
-            System.out.println(sb); // 'L501 ledom aneryS'
-        }
+        System.out.println("---- Odwrócenie stringa ----");
+        stringBuilder.reverse();
+        System.out.println(stringBuilder);             // 'L501 ledom aneryS'
     }
+
 
     /**
      * Długość, a pojemność
@@ -157,3 +84,5 @@ public class StringBuilderExample {
         }
     }
 }
+
+
