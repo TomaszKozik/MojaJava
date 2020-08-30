@@ -8,7 +8,7 @@ package typyZmiennych.string;
  */
 public class OperacjeNaStringach {
 
-    // Przykładowe String'i na których będą wykonane poniższe operacje
+    // Przykładowe parametry i argumenty, na których będą wykonane poniższe operacje
     private static final String emptyString = "";
     private static final String oneLineString = "Syrena 105L";
     private static final String multiLineString = "Mój samochód to FSM Syrena 105L.\nWyprodukowany w 1980r.\nJego długość to 4,04m.";
@@ -97,7 +97,8 @@ public class OperacjeNaStringach {
         return oneLineString.isEmpty();         // false
     }
 
-    /** Zmiana wielkości wszystkich liter na duże
+    /**
+     * Zmiana wielkości wszystkich liter na duże
      * .toUpperCase()
      *
      * @return String Upper of oneLineString
@@ -106,7 +107,8 @@ public class OperacjeNaStringach {
         return oneLineString.toUpperCase();     // SYRENA 105L
     }
 
-    /** Zmiana wielkości wszystkich liter na małe
+    /**
+     * Zmiana wielkości wszystkich liter na małe
      * .toLowerCase()
      *
      * @return String lower of oneLineString
@@ -150,7 +152,7 @@ public class OperacjeNaStringach {
      * Zmiana fragmentu String'a na inny
      * Zmiana '105L' na 'Bosto'
      * .replace(String str, String str)
-     * 
+     *
      * @return String String with replaced part
      */
     private static String getStringWithReplacedPart() {
@@ -168,7 +170,7 @@ public class OperacjeNaStringach {
     private static String getStringWithReplacedPartByRegex() {
         return oneLineString.replaceAll("//d", ""); // Syrena L
     }
-    
+
     /**
      * Usuwanie białych znaków z początku i końca String'a
      * .trim()
