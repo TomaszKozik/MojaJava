@@ -1,6 +1,5 @@
 package typyZmiennych.string;
 
-//todo wrzucic na blog
 /**
  * Główna klasa Java Objectma toString()metodę uzyskania reprezentacji ciągu obiektu.
  * Jeśli chcesz mieć swój ciąg znaków, zastąp tę metodę w swojej klasie.
