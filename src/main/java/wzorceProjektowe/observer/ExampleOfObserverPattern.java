@@ -10,12 +10,18 @@ import java.util.List;
  * Wymaga interfejsu, który narzuca metody informujące o końcu działania wątku (poniżej Observer)
  * w klasie, która potrzebuje informacji o zakończeniu pracy wątku.
  */
-public class DesignPattern_Observer {
+public class ExampleOfObserverPattern {
     public static void main(String[] args) {
-        Subject subject = new Subject();
-        subject.addObserver(new Client1());
-        subject.addObserver(new Client2());
-        subject.startWork();
+        Subject subject = new Subject();        // Nowy wątek
+        subject.addObserver(new Client1());     // Pierwszy klient nasłuchujący wątek
+        subject.addObserver(new Client2());     // Drugi klient nasłuchujący wątek
+        subject.startWork();                    // Start wątku
+        try {
+            Thread.sleep(1500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println("Do something else in the middle of the thread");
     }
 }
 
@@ -24,6 +30,9 @@ interface Observer {
     void update();
 }
 
+/**
+ * Klient 1 oczekujący na zakończenie wątku
+ */
 class Client1 implements Observer {
 
     @Override
@@ -32,6 +41,9 @@ class Client1 implements Observer {
     }
 }
 
+/**
+ * Klient 2 oczekujący na zakończenie wątku
+ */
 class Client2 implements Observer {
 
     @Override
@@ -60,8 +72,8 @@ class Subject {
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
-                for (int i = 0; i < 100; i++) {
-                    System.out.println(i);
+                for (int i = 0; i <= 100; i++) {
+                    System.out.println("Czas: " + i * 100 + "ms");
                     try {
                         Thread.sleep(100);
                     } catch (InterruptedException e) {
