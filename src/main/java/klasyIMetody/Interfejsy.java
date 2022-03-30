@@ -11,6 +11,8 @@ package klasyIMetody;
  *
  * Interfejs nie może zawierać pól (tylko stałe ), konstruktorów ani niepublicznych metod abstrakcyjnych.
  *
+ * Swietny przykład wykorzystania interfejsów można znaleźć w wzorcu projektowym abstractFactory
+ *
  * Żródło wiedzy: https://hyperskill.org/learn/step/3615
  */
 interface AlarmClock {
@@ -83,7 +85,7 @@ class Phone implements AlarmClock {
 }
 
 class Interfejsy {
-    public static void main(String args[]) {
+    public static void main(String[] args) {
 
         /**
          * Ważną zaletą interfejsów jest to, że można ich używać, jako typów.
