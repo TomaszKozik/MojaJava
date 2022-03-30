@@ -1,4 +1,4 @@
-package typyZmiennych.string;
+package zmienne.string;
 
 import java.util.Locale;
 

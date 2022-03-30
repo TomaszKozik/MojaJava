@@ -1,4 +1,4 @@
-package typyZmiennych;
+package tablice_kolekcje;
 
 import java.util.Arrays;
 import java.util.Scanner;

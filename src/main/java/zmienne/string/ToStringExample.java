@@ -1,4 +1,4 @@
-package typyZmiennych.string;
+package zmienne.string;
 
 /**
  * Główna klasa Java Objectma toString()metodę uzyskania reprezentacji ciągu obiektu.
