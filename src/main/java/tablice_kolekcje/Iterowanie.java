@@ -1,4 +1,4 @@
-package kolekcje;
+package tablice_kolekcje;
 
 import java.util.ArrayList;
 import java.util.List;
