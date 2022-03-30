@@ -20,7 +20,7 @@ import java.util.Locale;
  * <p>
  * Source: 'JetBrains Academy: https://hyperskill.org/learn/step/7046
  */
-public class FormatExamples {
+public class FormatowanieString {
 
     // Przykładowe parametry i argumenty, na których będą wykonane poniższe operacje
     private static final String toFormat = "%s ma %.2f długości i spala %f litrów na %d km\n";

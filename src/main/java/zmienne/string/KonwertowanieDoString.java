@@ -1,10 +1,10 @@
 package zmienne.string;
 
 /**
- * Główna klasa Java Objectma toString()metodę uzyskania reprezentacji ciągu obiektu.
+ * Główna klasa Java Objectma toString() metodę uzyskania reprezentacji ciągu obiektu.
  * Jeśli chcesz mieć swój ciąg znaków, zastąp tę metodę w swojej klasie.
  */
-public class ToStringExample {
+public class KonwertowanieDoString {
 
     static class PrzykladDlaKlasBezDziedziczenia {
         public static void main(String[] args) {
