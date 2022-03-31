@@ -1,5 +1,8 @@
 package klasyIMetody;
 
+/**
+ * Źródło wiedzy: https://hyperskill.org/learn/step/3585
+ */
 public class Dziedziczenie {
 
     public static void main(String args[]) {

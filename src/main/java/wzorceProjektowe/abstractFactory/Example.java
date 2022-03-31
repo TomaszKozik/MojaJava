@@ -13,7 +13,7 @@ package wzorceProjektowe.abstractFactory;
  */
 //Interface dla części Silnik
 interface Engine {
-    Integer power();
+    Integer getPower();
 }
 
 //Interface dla częśći Nadwozie
@@ -24,7 +24,7 @@ interface Body {
 // Silnik do Forda
 class FordEngine implements Engine {
     @Override
-    public Integer power() {
+    public Integer getPower() {
         return 100;
     }
 }
@@ -46,7 +46,7 @@ class FordBody implements Body {
 // Silnik do Syreny
 class SyrenaEngine implements Engine {
     @Override
-    public Integer power() {
+    public Integer getPower() {
         return 35;
     }
 }
@@ -122,26 +122,26 @@ abstract class Car {
     }
 
     public void printPowerOfEngine() {
-        System.out.println("The power of " + getName() + " is " + engine.power() + " KM");
+        System.out.println("The power of " + getName() + " is " + engine.getPower() + " KM");
     }
 
     public void printColourOfBody() {
         System.out.println("The colour of " + getName() + " is " + body.getColour());
     }
 
-    abstract void makeCar(String colour);
+    abstract public void makeCar(String colour);
 }
 
 // Jak złożyć Forda?
 class Ford extends Car {
-    public CarFactoryInterface carFactoryInterface;
+    private final CarFactoryInterface carFactoryInterface;
 
     public Ford(CarFactoryInterface carFactoryInterface) {
         this.carFactoryInterface = carFactoryInterface;
     }
 
     @Override
-    void makeCar(String colour) {
+    public void makeCar(String colour) {
         System.out.println("Making a car" + getName());
         body = carFactoryInterface.addBody(colour);
         engine = carFactoryInterface.addEngine();
@@ -150,14 +150,14 @@ class Ford extends Car {
 
 // Jak złożyć Syrenę?
 class Syrena extends Car {
-    public CarFactoryInterface carFactoryInterface;
+    private final CarFactoryInterface carFactoryInterface;
 
     public Syrena(CarFactoryInterface carFactoryInterface) {
         this.carFactoryInterface = carFactoryInterface;
     }
 
     @Override
-    void makeCar(String colour) {
+    public void makeCar(String colour) {
         System.out.println("Making a car" + getName());
         body = carFactoryInterface.addBody(colour);
         engine = carFactoryInterface.addEngine();
@@ -168,23 +168,24 @@ class Syrena extends Car {
  * Sekcja zamówienia samochodu i jego zbudowania pod klienta
  */
 // Zbuduj samochód według zamówienia
-abstract class CarBuild {
-    abstract protected Car buildCar(String nameOfCar);
+abstract class BuildCar {
+    // Składasz zamówienie na samochód poprzez wymuszenie zbudowania klasy do składania zamówień
+    abstract protected Car orderCar(String nameOfCar);
 
-    public Car orderTheCar(String nameOfCar, String colour) {
-        Car car = buildCar(nameOfCar);
+    // Budujesz samochód na podstawie złożonego zamówienia.
+    public void build(String nameOfCar, String colour) {
+        Car car = orderCar(nameOfCar);      // Klasa do zamówień zwraca Ci obiek samochód do zbudowania.
         car.makeCar(colour);
         car.printColourOfBody();
         car.printPowerOfEngine();
-        return car;
     }
 }
 
 // Zamów samochód według wytycznych
-class CarOrder extends CarBuild {
+class OrderCar extends BuildCar {
 
     @Override
-    protected Car buildCar(String nameOfCar) {
+    protected Car orderCar(String nameOfCar) {
         Car car = null;
 
         if (nameOfCar.equals("Ford")) {
@@ -201,13 +202,13 @@ class CarOrder extends CarBuild {
 }
 
 /**
- * Wykoanie całości
+ * Wykonanie całości
  */
 public class Example {
     public static void main(String[] args) {
-        CarBuild car = new CarOrder();
-        car.orderTheCar("Ford", "niebieski");
+        BuildCar orderCar = new OrderCar();
+        orderCar.build("Ford", "niebieski");
         System.out.println("----------------");
-        car.orderTheCar("Syrena", "kość słoniowa");
+        orderCar.build("Syrena", "kość słoniowa");
     }
 }

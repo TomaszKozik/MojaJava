@@ -28,7 +28,7 @@ package klasyIMetody;
  * { }    - ten nawias klamrowy informuje nas, gdzie zaczyna się i gdzie kończy ciało klasy.
  *          Ciało klasy, to nic innego jak kod, składnia, wobec której nasz skrypt, aplikacja, program będzie działał
  */
-public class KlasyMetody {
+public class Klasa_i_Metoda {
     /**
      * Każda klasa może zawierać metody i zmienne.
      * Najważniejszą metodą jest metoda o nazwiie "main", którą widzisz poniżej komentarza.
