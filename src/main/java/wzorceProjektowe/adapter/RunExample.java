@@ -75,35 +75,35 @@ class MechanicalScooter implements MechanicalVehicle {
 /**
  * Adapter, przejściówka umożliwiająca realizację zadań hulajnogi elektrycznej przez hulajnogę mechaniczną
  */
-class MechanicalScooterAdapter implements ElectricVehicle {
-    MechanicalScooter mechanicalScooter;
+class MechanicalVehicleAdapter implements ElectricVehicle {
+    MechanicalVehicle mechanicalVehicle;
 
     // Konstrukor przyjmuje klasę adaptowaną
-    public MechanicalScooterAdapter(MechanicalScooter mechanicalScooter) {
-        this.mechanicalScooter = mechanicalScooter;
+    public MechanicalVehicleAdapter(MechanicalVehicle mechanicalVehicle) {
+        this.mechanicalVehicle = mechanicalVehicle;
     }
 
     @Override
     public void honk() {
-        mechanicalScooter.ring();
+        mechanicalVehicle.ring();
     }
 
     @Override
     public void drive() {
-        mechanicalScooter.ride();
+        mechanicalVehicle.ride();
     }
 
     @Override
     public void assignDriver(String driverName) {
-        mechanicalScooter.assignCyclist(driverName);
+        mechanicalVehicle.assignCyclist(driverName);
     }
 }
 
 public class RunExample {
     public static void main(String[] args) {
-        ElectricScooter electricScooter = new ElectricScooter();
-        MechanicalScooter mechanicalScooter = new MechanicalScooter();
-        ElectricVehicle mechanicalScooterAdapter = new MechanicalScooterAdapter(mechanicalScooter);
+        ElectricVehicle electricScooter = new ElectricScooter();
+        MechanicalVehicle mechanicalScooter = new MechanicalScooter();
+        ElectricVehicle mechanicalScooterAdapted = new MechanicalVehicleAdapter(mechanicalScooter);
 
         System.out.println("Mechanical scooter");
         mechanicalScooter.assignCyclist("Paul");
@@ -119,8 +119,8 @@ public class RunExample {
         // Wynik jest podobny do mechanicalScooter, lecz funkcje są wykonywane przez adapter
         System.out.println("---------");
         System.out.println("Mechanical scooter adapter");
-        mechanicalScooterAdapter.assignDriver("Mark");
-        mechanicalScooterAdapter.drive();
-        mechanicalScooterAdapter.honk();
+        mechanicalScooterAdapted.assignDriver("Mark");
+        mechanicalScooterAdapted.drive();
+        mechanicalScooterAdapted.honk();
     }
 }
